@@ -3,7 +3,7 @@
 //  DataSource
 //
 //  Created by Brad Smith on 2/3/17.
-//  Copyright © 2017 CocoaPods. All rights reserved.
+//  Copyright © 2017 ezCater. All rights reserved.
 //
 
 import Foundation
