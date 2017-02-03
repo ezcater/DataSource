@@ -10,9 +10,13 @@
 		159A860F24512F03515B2E79 /* Pods_DataSource_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D7B5276879D81EBD72321F /* Pods_DataSource_Example.framework */; };
 		488A4C8C1E43CB8C00BE457C /* ListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A4C8B1E43CB8C00BE457C /* ListDataSourceTests.swift */; };
 		488A4C8F1E43D2E600BE457C /* SectionedDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A4C8D1E43D2D000BE457C /* SectionedDataSourceTests.swift */; };
+		48DD56141E45211F001A3885 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD56131E45211F001A3885 /* ListViewController.swift */; };
+		48DD56161E45212E001A3885 /* SectionedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD56151E45212E001A3885 /* SectionedViewController.swift */; };
+		48DD561A1E452158001A3885 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD56191E452158001A3885 /* RootViewController.swift */; };
+		48DD561C1E4521DE001A3885 /* RootDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD561B1E4521DE001A3885 /* RootDataSource.swift */; };
+		48DD561E1E4524D6001A3885 /* SimpleListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD561D1E4524D6001A3885 /* SimpleListDataSource.swift */; };
+		48DD56201E4526C7001A3885 /* SimpleSectionedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD561F1E4526C7001A3885 /* SimpleSectionedDataSource.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		EC5AEA79BA4495E6D68BF802 /* Pods_DataSource_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D320C2306714976B7E938F24 /* Pods_DataSource_Tests.framework */; };
@@ -34,13 +38,17 @@
 		47A603629FAAF7DC6DF54CCB /* Pods-DataSource_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataSource_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DataSource_Tests/Pods-DataSource_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		488A4C8B1E43CB8C00BE457C /* ListDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDataSourceTests.swift; sourceTree = "<group>"; };
 		488A4C8D1E43D2D000BE457C /* SectionedDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedDataSourceTests.swift; sourceTree = "<group>"; };
+		48DD56131E45211F001A3885 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		48DD56151E45212E001A3885 /* SectionedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedViewController.swift; sourceTree = "<group>"; };
+		48DD56191E452158001A3885 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		48DD561B1E4521DE001A3885 /* RootDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDataSource.swift; sourceTree = "<group>"; };
+		48DD561D1E4524D6001A3885 /* SimpleListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleListDataSource.swift; sourceTree = "<group>"; };
+		48DD561F1E4526C7001A3885 /* SimpleSectionedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSectionedDataSource.swift; sourceTree = "<group>"; };
 		4A19597887C4604C7E5E837A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		50DF2670666498C2FC8B266A /* Pods-DataSource_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataSource_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DataSource_Example/Pods-DataSource_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* DataSource_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataSource_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* DataSource_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataSource_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,8 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				48DD56191E452158001A3885 /* RootViewController.swift */,
+				48DD561B1E4521DE001A3885 /* RootDataSource.swift */,
+				48DD56131E45211F001A3885 /* ListViewController.swift */,
+				48DD561D1E4524D6001A3885 /* SimpleListDataSource.swift */,
+				48DD56151E45212E001A3885 /* SectionedViewController.swift */,
+				48DD561F1E4526C7001A3885 /* SimpleSectionedDataSource.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -214,7 +226,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = CocoaPods;
+				ORGANIZATIONNAME = ezCater;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -251,7 +263,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -364,8 +375,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				48DD561C1E4521DE001A3885 /* RootDataSource.swift in Sources */,
+				48DD561A1E452158001A3885 /* RootViewController.swift in Sources */,
+				48DD56161E45212E001A3885 /* SectionedViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				48DD56201E4526C7001A3885 /* SimpleSectionedDataSource.swift in Sources */,
+				48DD56141E45211F001A3885 /* ListViewController.swift in Sources */,
+				48DD561E1E4524D6001A3885 /* SimpleListDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,14 +405,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -504,7 +512,7 @@
 				INFOPLIST_FILE = DataSource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ezcater.demo.DataSource-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -519,7 +527,7 @@
 				INFOPLIST_FILE = DataSource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ezcater.demo.DataSource-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -529,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFA730FDE5E14DD8F24DDF7B /* Pods-DataSource_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -539,7 +548,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ezcater.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -549,13 +558,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 47A603629FAAF7DC6DF54CCB /* Pods-DataSource_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ezcater.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
