@@ -16,6 +16,11 @@
 		48DD561C1E4521DE001A3885 /* RootDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD561B1E4521DE001A3885 /* RootDataSource.swift */; };
 		48DD561E1E4524D6001A3885 /* SimpleListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD561D1E4524D6001A3885 /* SimpleListDataSource.swift */; };
 		48DD56201E4526C7001A3885 /* SimpleSectionedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD561F1E4526C7001A3885 /* SimpleSectionedDataSource.swift */; };
+		48DD56271E4537B2001A3885 /* FetchedDataSource.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48DD56251E4537B2001A3885 /* FetchedDataSource.xcdatamodeld */; };
+		48DD56291E4539BA001A3885 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD56281E4539BA001A3885 /* CoreDataController.swift */; };
+		48DD562B1E454695001A3885 /* FetchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD562A1E454695001A3885 /* FetchedViewController.swift */; };
+		48DD562D1E4546A7001A3885 /* SimpleFetchedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD562C1E4546A7001A3885 /* SimpleFetchedDataSource.swift */; };
+		48DD562F1E454FB9001A3885 /* Item+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD562E1E454FB9001A3885 /* Item+Extensions.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -44,6 +49,11 @@
 		48DD561B1E4521DE001A3885 /* RootDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDataSource.swift; sourceTree = "<group>"; };
 		48DD561D1E4524D6001A3885 /* SimpleListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleListDataSource.swift; sourceTree = "<group>"; };
 		48DD561F1E4526C7001A3885 /* SimpleSectionedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSectionedDataSource.swift; sourceTree = "<group>"; };
+		48DD56261E4537B2001A3885 /* FetchedDataSource.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FetchedDataSource.xcdatamodel; sourceTree = "<group>"; };
+		48DD56281E4539BA001A3885 /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		48DD562A1E454695001A3885 /* FetchedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedViewController.swift; sourceTree = "<group>"; };
+		48DD562C1E4546A7001A3885 /* SimpleFetchedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleFetchedDataSource.swift; sourceTree = "<group>"; };
+		48DD562E1E454FB9001A3885 /* Item+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+Extensions.swift"; sourceTree = "<group>"; };
 		4A19597887C4604C7E5E837A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		50DF2670666498C2FC8B266A /* Pods-DataSource_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataSource_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DataSource_Example/Pods-DataSource_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* DataSource_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataSource_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +98,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		48DD56211E453760001A3885 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				48DD56191E452158001A3885 /* RootViewController.swift */,
+				48DD561B1E4521DE001A3885 /* RootDataSource.swift */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		48DD56221E45376C001A3885 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				48DD56131E45211F001A3885 /* ListViewController.swift */,
+				48DD561D1E4524D6001A3885 /* SimpleListDataSource.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		48DD56231E453775001A3885 /* Sectioned */ = {
+			isa = PBXGroup;
+			children = (
+				48DD56151E45212E001A3885 /* SectionedViewController.swift */,
+				48DD561F1E4526C7001A3885 /* SimpleSectionedDataSource.swift */,
+			);
+			name = Sectioned;
+			sourceTree = "<group>";
+		};
+		48DD56241E453784001A3885 /* Fetched */ = {
+			isa = PBXGroup;
+			children = (
+				48DD56251E4537B2001A3885 /* FetchedDataSource.xcdatamodeld */,
+				48DD56281E4539BA001A3885 /* CoreDataController.swift */,
+				48DD562E1E454FB9001A3885 /* Item+Extensions.swift */,
+				48DD562A1E454695001A3885 /* FetchedViewController.swift */,
+				48DD562C1E4546A7001A3885 /* SimpleFetchedDataSource.swift */,
+			);
+			name = Fetched;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -112,13 +161,11 @@
 		607FACD21AFB9204008FA782 /* Example for DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				48DD56211E453760001A3885 /* Root */,
+				48DD56231E453775001A3885 /* Sectioned */,
+				48DD56221E45376C001A3885 /* List */,
+				48DD56241E453784001A3885 /* Fetched */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				48DD56191E452158001A3885 /* RootViewController.swift */,
-				48DD561B1E4521DE001A3885 /* RootDataSource.swift */,
-				48DD56131E45211F001A3885 /* ListViewController.swift */,
-				48DD561D1E4524D6001A3885 /* SimpleListDataSource.swift */,
-				48DD56151E45212E001A3885 /* SectionedViewController.swift */,
-				48DD561F1E4526C7001A3885 /* SimpleSectionedDataSource.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -377,8 +424,13 @@
 			files = (
 				48DD561C1E4521DE001A3885 /* RootDataSource.swift in Sources */,
 				48DD561A1E452158001A3885 /* RootViewController.swift in Sources */,
+				48DD562F1E454FB9001A3885 /* Item+Extensions.swift in Sources */,
 				48DD56161E45212E001A3885 /* SectionedViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				48DD56271E4537B2001A3885 /* FetchedDataSource.xcdatamodeld in Sources */,
+				48DD56291E4539BA001A3885 /* CoreDataController.swift in Sources */,
+				48DD562D1E4546A7001A3885 /* SimpleFetchedDataSource.swift in Sources */,
+				48DD562B1E454695001A3885 /* FetchedViewController.swift in Sources */,
 				48DD56201E4526C7001A3885 /* SimpleSectionedDataSource.swift in Sources */,
 				48DD56141E45211F001A3885 /* ListViewController.swift in Sources */,
 				48DD561E1E4524D6001A3885 /* SimpleListDataSource.swift in Sources */,
@@ -602,6 +654,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		48DD56251E4537B2001A3885 /* FetchedDataSource.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48DD56261E4537B2001A3885 /* FetchedDataSource.xcdatamodel */,
+			);
+			currentVersion = 48DD56261E4537B2001A3885 /* FetchedDataSource.xcdatamodel */;
+			path = FetchedDataSource.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }

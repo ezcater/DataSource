@@ -15,7 +15,8 @@ class RootDataSource: ListDataSource {
     
     fileprivate(set) var items = [
         ListViewController(nibName: nil, bundle: nil),
-        SectionedViewController(nibName: nil, bundle: nil)
+        SectionedViewController(nibName: nil, bundle: nil),
+        FetchedViewController(nibName: nil, bundle: nil)
     ]
     
     var reloadBlock: ReloadBlock?

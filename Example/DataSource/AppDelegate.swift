@@ -17,6 +17,8 @@ class AppDelegate: UIResponder {
 
 extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let _ = CoreDataController.sharedInstance
+        
         let rootViewController = RootViewController(nibName: nil, bundle: nil)
         let rootNavigationController = UINavigationController(rootViewController: rootViewController)
         window.rootViewController = rootNavigationController
