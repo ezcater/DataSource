@@ -1,0 +1,22 @@
+{
+  "name": "DataSource",
+  "version": "0.1.0",
+  "summary": "A short description of DataSource.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Brad Smith/DataSource",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Brad Smith": "bradley.d.smith11@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Brad Smith/DataSource.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "DataSource/Classes/**/*"
+}

@@ -5,7 +5,6 @@ target 'DataSource_Example' do
 
   target 'DataSource_Tests' do
     inherit! :search_paths
-
-    
+    pod 'DataSource', :path => '../'
   end
 end

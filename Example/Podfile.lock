@@ -1,0 +1,16 @@
+PODS:
+  - DataSource (0.1.0)
+
+DEPENDENCIES:
+  - DataSource (from `../`)
+
+EXTERNAL SOURCES:
+  DataSource:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DataSource: 0ba432adca378413eb82cf08c38bd3bbc6944f41
+
+PODFILE CHECKSUM: 95b6b01408b5a82d0e1ec0428f485db8d8d8e671
+
+COCOAPODS: 1.1.1
