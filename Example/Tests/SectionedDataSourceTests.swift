@@ -10,7 +10,7 @@ import XCTest
 import DataSource
 
 class SectionedDataSourceTests: XCTestCase {
-    var dataSource: SimpleSectionedDataSource = SimpleSectionedDataSource()
+    var dataSource = TestSectionedDataSource()
     
     func testNumberOfSections() {
         XCTAssertEqual(3, dataSource.numberOfSections)
@@ -104,7 +104,7 @@ class SectionedDataSourceTests: XCTestCase {
     }
 }
 
-class SimpleSectionedDataSource: SectionedDataSource {
+class TestSectionedDataSource: SectionedDataSource {
     typealias ModelType = String
     
     var sections: [Section<String>]
