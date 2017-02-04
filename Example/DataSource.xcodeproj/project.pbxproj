@@ -42,8 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E2E970327F565CF6FEF3DDF /* DataSource.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DataSource.podspec; path = ../DataSource.podspec; sourceTree = "<group>"; };
-		416805235E274DC73C290361 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		1E2E970327F565CF6FEF3DDF /* DataSource.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DataSource.podspec; path = ../../DataSource.podspec; sourceTree = "<group>"; };
+		416805235E274DC73C290361 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
 		47A603629FAAF7DC6DF54CCB /* Pods-DataSource_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataSource_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DataSource_Tests/Pods-DataSource_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		488A4C8B1E43CB8C00BE457C /* ListDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDataSourceTests.swift; sourceTree = "<group>"; };
 		488A4C8D1E43D2D000BE457C /* SectionedDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedDataSourceTests.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		48DD562C1E4546A7001A3885 /* SimpleFetchedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleFetchedDataSource.swift; sourceTree = "<group>"; };
 		48DD562E1E454FB9001A3885 /* Item+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+Extensions.swift"; sourceTree = "<group>"; };
 		48DD56301E455108001A3885 /* FetchedDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedDataSourceTests.swift; sourceTree = "<group>"; };
-		4A19597887C4604C7E5E837A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4A19597887C4604C7E5E837A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		50DF2670666498C2FC8B266A /* Pods-DataSource_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataSource_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DataSource_Example/Pods-DataSource_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* DataSource_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataSource_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,10 +106,11 @@
 		48DD56211E453760001A3885 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				48DD56191E452158001A3885 /* RootViewController.swift */,
 				48DD561B1E4521DE001A3885 /* RootDataSource.swift */,
+				48DD56191E452158001A3885 /* RootViewController.swift */,
 			);
 			name = Root;
+			path = Root;
 			sourceTree = "<group>";
 		};
 		48DD56221E45376C001A3885 /* List */ = {
@@ -119,6 +120,7 @@
 				48DD561D1E4524D6001A3885 /* SimpleListDataSource.swift */,
 			);
 			name = List;
+			path = List;
 			sourceTree = "<group>";
 		};
 		48DD56231E453775001A3885 /* Sectioned */ = {
@@ -128,29 +130,31 @@
 				48DD561F1E4526C7001A3885 /* SimpleSectionedDataSource.swift */,
 			);
 			name = Sectioned;
+			path = Sectioned;
 			sourceTree = "<group>";
 		};
 		48DD56241E453784001A3885 /* Fetched */ = {
 			isa = PBXGroup;
 			children = (
-				48DD56251E4537B2001A3885 /* FetchedDataSource.xcdatamodeld */,
 				48DD56281E4539BA001A3885 /* CoreDataController.swift */,
-				48DD562E1E454FB9001A3885 /* Item+Extensions.swift */,
+				48DD56251E4537B2001A3885 /* FetchedDataSource.xcdatamodeld */,
 				48DD562A1E454695001A3885 /* FetchedViewController.swift */,
+				48DD562E1E454FB9001A3885 /* Item+Extensions.swift */,
 				48DD562C1E4546A7001A3885 /* SimpleFetchedDataSource.swift */,
 			);
 			name = Fetched;
+			path = Fetched;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* Example for DataSource */,
-				607FACE81AFB9204008FA782 /* Tests */,
-				607FACD11AFB9204008FA782 /* Products */,
-				809CF9A7ADA73BD7EC779E51 /* Pods */,
+				607FACD21AFB9204008FA782 /* Example */,
 				17CF1442972E80D6629FEFD9 /* Frameworks */,
+				809CF9A7ADA73BD7EC779E51 /* Pods */,
+				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD11AFB9204008FA782 /* Products */,
+				607FACE81AFB9204008FA782 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,20 +167,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607FACD21AFB9204008FA782 /* Example for DataSource */ = {
+		607FACD21AFB9204008FA782 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				48DD56211E453760001A3885 /* Root */,
-				48DD56221E45376C001A3885 /* List */,
-				48DD56231E453775001A3885 /* Sectioned */,
 				48DD56241E453784001A3885 /* Fetched */,
+				48DD56221E45376C001A3885 /* List */,
+				48DD56211E453760001A3885 /* Root */,
+				48DD56231E453775001A3885 /* Sectioned */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
-			name = "Example for DataSource";
-			path = DataSource;
+			name = Example;
+			path = Example;
 			sourceTree = "<group>";
 		};
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
@@ -185,15 +189,16 @@
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				607FACE91AFB9204008FA782 /* Supporting Files */,
+				48DD56301E455108001A3885 /* FetchedDataSourceTests.swift */,
 				488A4C8B1E43CB8C00BE457C /* ListDataSourceTests.swift */,
 				488A4C8D1E43D2D000BE457C /* SectionedDataSourceTests.swift */,
-				48DD56301E455108001A3885 /* FetchedDataSourceTests.swift */,
-				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -204,16 +209,18 @@
 				607FACEA1AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
 				1E2E970327F565CF6FEF3DDF /* DataSource.podspec */,
-				4A19597887C4604C7E5E837A /* README.md */,
 				416805235E274DC73C290361 /* LICENSE */,
+				4A19597887C4604C7E5E837A /* README.md */,
 			);
 			name = "Podspec Metadata";
+			path = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
 		809CF9A7ADA73BD7EC779E51 /* Pods */ = {
@@ -472,6 +479,7 @@
 				607FACDF1AFB9204008FA782 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -570,7 +578,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = DataSource/Info.plist;
+				INFOPLIST_FILE = "Example/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ezcater.demo.DataSource-Example";
@@ -585,7 +593,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = DataSource/Info.plist;
+				INFOPLIST_FILE = "Example/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ezcater.demo.DataSource-Example";
@@ -607,7 +615,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ezcater.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -624,7 +632,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ezcater.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
