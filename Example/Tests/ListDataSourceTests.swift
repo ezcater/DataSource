@@ -10,7 +10,7 @@ import XCTest
 import DataSource
 
 class ListDataSourceTests: XCTestCase {
-    var dataSource: SimpleListDataSource = SimpleListDataSource()
+    var dataSource = TestListDataSource()
     
     func testNumberOfSections() {
         XCTAssertEqual(1, dataSource.numberOfSections)
@@ -54,7 +54,7 @@ class ListDataSourceTests: XCTestCase {
     }
 }
 
-class SimpleListDataSource: ListDataSource {
+class TestListDataSource: ListDataSource {
     typealias ModelType = String
     
     var items: [String]

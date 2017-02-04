@@ -25,12 +25,18 @@ extension Item {
         return fetchedResultsController
     }
     
-    static func addItem() {
+    static func addItem(withTitle title: String) {
         let context = CoreDataController.sharedInstance.mainContext
-        context.perform {
+        context.performAndWait {
             let item = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as? Item
-            item?.title = item?.objectID.description
-            try? context.save()
+            item?.title = title
+            
+            do {
+                try context.save()
+            }
+            catch(let error) {
+                print("Failed to save with error: \(error)")
+            }
         }
         
     }

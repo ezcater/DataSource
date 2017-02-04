@@ -30,7 +30,8 @@ class SimpleFetchedDataSource: NSObject, FetchedDataSource {
     }
     
     func addItem() {
-        Item.addItem()
+        let count = numberOfItems(in: 0)
+        Item.addItem(withTitle: "Item \(count)")
     }
 }
 
