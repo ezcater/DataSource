@@ -109,7 +109,6 @@
 				48DD561B1E4521DE001A3885 /* RootDataSource.swift */,
 				48DD56191E452158001A3885 /* RootViewController.swift */,
 			);
-			name = Root;
 			path = Root;
 			sourceTree = "<group>";
 		};
@@ -119,7 +118,6 @@
 				48DD56131E45211F001A3885 /* ListViewController.swift */,
 				48DD561D1E4524D6001A3885 /* SimpleListDataSource.swift */,
 			);
-			name = List;
 			path = List;
 			sourceTree = "<group>";
 		};
@@ -129,7 +127,6 @@
 				48DD56151E45212E001A3885 /* SectionedViewController.swift */,
 				48DD561F1E4526C7001A3885 /* SimpleSectionedDataSource.swift */,
 			);
-			name = Sectioned;
 			path = Sectioned;
 			sourceTree = "<group>";
 		};
@@ -142,8 +139,17 @@
 				48DD562E1E454FB9001A3885 /* Item+Extensions.swift */,
 				48DD562C1E4546A7001A3885 /* SimpleFetchedDataSource.swift */,
 			);
-			name = Fetched;
 			path = Fetched;
+			sourceTree = "<group>";
+		};
+		48DD56371E458A47001A3885 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+			);
+			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -172,14 +178,12 @@
 			children = (
 				48DD56241E453784001A3885 /* Fetched */,
 				48DD56221E45376C001A3885 /* List */,
+				48DD56371E458A47001A3885 /* Resources */,
 				48DD56211E453760001A3885 /* Root */,
 				48DD56231E453775001A3885 /* Sectioned */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 			);
-			name = Example;
 			path = Example;
 			sourceTree = "<group>";
 		};
@@ -188,7 +192,6 @@
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -208,7 +211,6 @@
 			children = (
 				607FACEA1AFB9204008FA782 /* Info.plist */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -219,7 +221,6 @@
 				416805235E274DC73C290361 /* LICENSE */,
 				4A19597887C4604C7E5E837A /* README.md */,
 			);
-			name = "Podspec Metadata";
 			path = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
