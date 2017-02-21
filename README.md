@@ -45,7 +45,7 @@ It includes default implementations for:
 
 #### Example
 
-```
+```swift
 class SimpleDataSource: ListDataSource {
     typealias ModelType = String
     
@@ -84,7 +84,7 @@ It includes default implementations for:
 
 #### Example
 
-```
+```swift
 class SimpleDataSource: SectionedDataSource {
     typealias ModelType = String
     typealias SectionType = Section<String>
