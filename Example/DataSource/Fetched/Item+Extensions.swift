@@ -28,8 +28,7 @@ extension Item {
     static func addItem(withTitle title: String) {
         let context = CoreDataController.sharedInstance.mainContext
         context.performAndWait {
-            let item = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as? Item
-            item?.title = title
+            createItem(withTitle: title, context: context)
             
             do {
                 try context.save()
@@ -38,6 +37,28 @@ extension Item {
                 print("Failed to save with error: \(error)")
             }
         }
-        
+    }
+    
+    static func delete(item: Item) {
+        let context = CoreDataController.sharedInstance.mainContext
+        context.performAndWait {
+            context.delete(item)
+            
+            do {
+                try context.save()
+            }
+            catch(let error) {
+                print("Failed to save with error: \(error)")
+            }
+        }
+    }
+}
+
+// MARK: - Private
+
+private extension Item {
+    static func createItem(withTitle title: String, context: NSManagedObjectContext) {
+        let item = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as? Item
+        item?.title = title
     }
 }

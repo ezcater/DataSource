@@ -33,4 +33,12 @@ class SimpleFetchedDataSource: NSObject, FetchedDataSource {
         let count = numberOfItems(in: 0)
         Item.addItem(withTitle: "Item \(count)")
     }
+    
+    func deleteItem(at indexPath: IndexPath) {
+        guard let item = item(at: indexPath) else {
+            return
+        }
+        
+        Item.delete(item: item)
+    }
 }
