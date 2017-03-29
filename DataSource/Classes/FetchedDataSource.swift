@@ -22,6 +22,9 @@ public protocol FetchedDataSource: DataSource {
      */
     
     var fetchedResultsController: NSFetchedResultsController<ModelType> { get }
+    
+    func register(fetchedResultsController: NSFetchedResultsController<ModelType>)
+    func unregister(fetchedResultsController: NSFetchedResultsController<ModelType>)
 }
 
 // MARK: - Public
@@ -63,5 +66,33 @@ public extension FetchedDataSource {
         }
         
         return fetchedResultsController.object(at: indexPath)
+    }
+}
+
+// MARK: - Public
+
+public extension FetchedDataSource {
+    func register(fetchedResultsController: NSFetchedResultsController<ModelType>) {
+        fetchedResultsController.delegate = fetchedChangeProxy
+    }
+    
+    func unregister(fetchedResultsController: NSFetchedResultsController<ModelType>) {
+        fetchedResultsController.delegate = nil
+    }
+}
+
+// MARK: - Private
+
+private extension FetchedDataSource {
+    var fetchedChangeProxy: FetchedChangeProxy {
+        guard let proxy = objc_getAssociatedObject(self, &FetchedChangeProxy.associatedKey) as? FetchedChangeProxy else {
+            let proxy = FetchedChangeProxy(reloadBlock: { [weak self] changeSet in
+                self?.reloadBlock?(changeSet)
+            })
+            objc_setAssociatedObject(self, &FetchedChangeProxy.associatedKey, proxy, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)            
+            return proxy
+        }
+        
+        return proxy
     }
 }

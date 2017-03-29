@@ -9,11 +9,10 @@
 import Foundation
 
 /**
- Passes back a single array parameter containing `IndexPath`s that have been invalidated. 
- If the array is empty, it signifies that all `IndexPath`s are invalid.
+ Passes back a single `ChangeSet` object signifying the requested changes.
  */
 
-public typealias ReloadBlock = ([IndexPath]) -> Void
+public typealias ReloadBlock = (ChangeSet) -> Void
 
 /**
  `DataSource` is a protocol for representing a backing data source. It is UI-independent and tailored for use with
@@ -21,7 +20,7 @@ public typealias ReloadBlock = ([IndexPath]) -> Void
  `ModelType` represents the type of items contained within the data source.
  */
 
-public protocol DataSource {
+public protocol DataSource: class {
     associatedtype ModelType
     
     /**
