@@ -22,11 +22,11 @@ class SimpleFetchedDataSource: NSObject, FetchedDataSource {
         
         super.init()
         
-        register(fetchedResultsController: fetchedResultsController)
+        registerForFetchedChanges()
     }
     
     deinit {
-        unregister(fetchedResultsController: fetchedResultsController)
+        unregisterForFetchedChanges()
     }
     
     func addItem() {

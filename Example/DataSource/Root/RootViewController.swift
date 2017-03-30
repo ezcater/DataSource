@@ -39,7 +39,7 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         
         dataSource.reloadBlock = { [weak self] changeSet in
-            self?.tableView.perform(changeSet: changeSet)
+            self?.tableView.performUpdates(withChangeSet: changeSet)
         }
     }
     

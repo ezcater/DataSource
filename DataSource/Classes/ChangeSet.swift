@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+public typealias ChangeSetCompletion = (Bool) -> Void
+
 public enum ChangeSet {
     case none
     case some([Change])
@@ -67,7 +69,7 @@ public enum ChangeType {
 // MARK: - UITableView
 
 public extension UITableView {
-    func perform(changeSet: ChangeSet, completion: ((Bool) -> Void)? = nil) {
+    func performUpdates(withChangeSet changeSet: ChangeSet, completion: ChangeSetCompletion? = nil) {
         switch changeSet {
         case .none:
             completion?(true)
@@ -123,43 +125,39 @@ public extension UITableView {
 // MARK: - UICollectionView
 
 public extension UICollectionView {
-    func perform(changeSet: ChangeSet, completion: ((Bool) -> Void)? = nil) {
+    func performUpdates(withChangeSet changeSet: ChangeSet, completion: ChangeSetCompletion? = nil) {
         switch changeSet {
         case .none:
             completion?(true)
         case .some(let changes):
-            let updates = { [weak self] in
-                guard let strongSelf = self else {
-                    return
-                }
-                
+            let updates = {
                 changes.forEach { change in
                     switch change {
                     case .section(let type):
                         switch type {
                         case .insert(let indexPath):
                             let indexSet = IndexSet(integer: indexPath.section)
-                            strongSelf.insertSections(indexSet)
+                            self.insertSections(indexSet)
                         case .delete(let indexPath):
                             let indexSet = IndexSet(integer: indexPath.section)
-                            strongSelf.deleteSections(indexSet)
+                            self.deleteSections(indexSet)
                         case .move(let oldIndexPath, let newIndexPath):
-                            strongSelf.moveSection(oldIndexPath.section, toSection: newIndexPath.section)
+                            self.moveSection(oldIndexPath.section, toSection: newIndexPath.section)
                         case .update(let indexPath):
                             let indexSet = IndexSet(integer: indexPath.section)
-                            strongSelf.reloadSections(indexSet)
+                            self.reloadSections(indexSet)
                         }
                         
                     case .object(let type):
                         switch type {
                         case .insert(let indexPath):
-                            strongSelf.insertItems(at: [indexPath])
+                            self.insertItems(at: [indexPath])
                         case .delete(let indexPath):
-                            strongSelf.deleteItems(at: [indexPath])
+                            self.deleteItems(at: [indexPath])
                         case .move(let oldIndexPath, let newIndexPath):
-                            strongSelf.moveItem(at: oldIndexPath, to: newIndexPath)
+                            self.moveItem(at: oldIndexPath, to: newIndexPath)
                         case .update(let indexPath):
-                            strongSelf.reloadItems(at: [indexPath])
+                            self.reloadItems(at: [indexPath])
                         }
                     }
                 }

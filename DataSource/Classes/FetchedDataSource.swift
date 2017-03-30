@@ -23,8 +23,8 @@ public protocol FetchedDataSource: DataSource {
     
     var fetchedResultsController: NSFetchedResultsController<ModelType> { get }
     
-    func register(fetchedResultsController: NSFetchedResultsController<ModelType>)
-    func unregister(fetchedResultsController: NSFetchedResultsController<ModelType>)
+    func registerForFetchedChanges()
+    func unregisterForFetchedChanges()
 }
 
 // MARK: - Public
@@ -72,11 +72,11 @@ public extension FetchedDataSource {
 // MARK: - Public
 
 public extension FetchedDataSource {
-    func register(fetchedResultsController: NSFetchedResultsController<ModelType>) {
+    func registerForFetchedChanges() {
         fetchedResultsController.delegate = fetchedChangeProxy
     }
     
-    func unregister(fetchedResultsController: NSFetchedResultsController<ModelType>) {
+    func unregisterForFetchedChanges() {
         fetchedResultsController.delegate = nil
     }
 }
