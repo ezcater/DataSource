@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-private class AnyFetchedDataSourceBase<ModelType: NSFetchRequestResult>: FetchedDataSource {
+private class AnyFetchedDataSourceBase<ItemType: NSFetchRequestResult>: FetchedDataSource {
     init() {
         guard type(of: self) != AnyFetchedDataSourceBase.self else {
             fatalError("AnyFetchedDataSourceBase is an abstract class")
@@ -31,13 +31,13 @@ private class AnyFetchedDataSourceBase<ModelType: NSFetchRequestResult>: Fetched
         fatalError("Must override")
     }
     
-    func item(at indexPath: IndexPath) -> ModelType? {
+    func item(at indexPath: IndexPath) -> ItemType? {
         fatalError("Must override")
     }
     
     // FetchedDataSource
     
-    var fetchedResultsController: NSFetchedResultsController<ModelType> {
+    var fetchedResultsController: NSFetchedResultsController<ItemType> {
         fatalError("Must override")
     }
     
@@ -50,7 +50,7 @@ private class AnyFetchedDataSourceBase<ModelType: NSFetchRequestResult>: Fetched
     }
 }
 
-private final class AnyFetchedDataSourceBox<Concrete: FetchedDataSource>: AnyFetchedDataSourceBase<Concrete.ModelType> {
+private final class AnyFetchedDataSourceBox<Concrete: FetchedDataSource>: AnyFetchedDataSourceBase<Concrete.ItemType> {
     var concrete: Concrete
     
     init(concrete: Concrete) {
@@ -76,13 +76,13 @@ private final class AnyFetchedDataSourceBox<Concrete: FetchedDataSource>: AnyFet
         return concrete.numberOfItems(in: section)
     }
     
-    override func item(at indexPath: IndexPath) -> ModelType? {
+    override func item(at indexPath: IndexPath) -> ItemType? {
         return concrete.item(at: indexPath)
     }
     
     // FetchedDataSource
     
-    override var fetchedResultsController: NSFetchedResultsController<ModelType> {
+    override var fetchedResultsController: NSFetchedResultsController<ItemType> {
         return concrete.fetchedResultsController
     }
     
@@ -95,10 +95,10 @@ private final class AnyFetchedDataSourceBox<Concrete: FetchedDataSource>: AnyFet
     }
 }
 
-public final class AnyFetchedDataSource<ModelType: NSFetchRequestResult>: FetchedDataSource {
-    private let box: AnyFetchedDataSourceBase<ModelType>
+public final class AnyFetchedDataSource<ItemType: NSFetchRequestResult>: FetchedDataSource {
+    private let box: AnyFetchedDataSourceBase<ItemType>
     
-    public init<Concrete: FetchedDataSource>(dataSource: Concrete) where Concrete.ModelType == ModelType {
+    public init<Concrete: FetchedDataSource>(dataSource: Concrete) where Concrete.ItemType == ItemType {
         box = AnyFetchedDataSourceBox(concrete: dataSource)
     }
     
@@ -121,13 +121,13 @@ public final class AnyFetchedDataSource<ModelType: NSFetchRequestResult>: Fetche
         return box.numberOfItems(in: section)
     }
     
-    public func item(at indexPath: IndexPath) -> ModelType? {
+    public func item(at indexPath: IndexPath) -> ItemType? {
         return box.item(at: indexPath)
     }
     
     // FetchedDataSource
     
-    public var fetchedResultsController: NSFetchedResultsController<ModelType> {
+    public var fetchedResultsController: NSFetchedResultsController<ItemType> {
         return box.fetchedResultsController
     }
     

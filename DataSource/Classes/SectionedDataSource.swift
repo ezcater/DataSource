@@ -14,7 +14,7 @@ import Foundation
  */
 
 public protocol SectionedDataSource: DataSource {
-    associatedtype SectionType: Section<ModelType>
+    associatedtype SectionType: Section<ItemType>
     
     /**
      Backing array of `SectionType` elements which represent all of the sections.
@@ -45,7 +45,7 @@ public protocol SectionedDataSource: DataSource {
 
 // MARK: - Public
 
-public extension SectionedDataSource where SectionType: Section<ModelType> {
+public extension SectionedDataSource where SectionType: Section<ItemType> {
     var numberOfSections: Int {
         return sections.count
     }
@@ -62,7 +62,7 @@ public extension SectionedDataSource where SectionType: Section<ModelType> {
         return sections[section].items.count
     }
     
-    func item(at indexPath: IndexPath) -> ModelType? {
+    func item(at indexPath: IndexPath) -> ItemType? {
         guard indexPath.section >= 0, indexPath.item >= 0 else {
             return nil
         }

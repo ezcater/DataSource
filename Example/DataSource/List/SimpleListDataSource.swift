@@ -10,7 +10,7 @@ import Foundation
 import DataSource
 
 class SimpleListDataSource: ListDataSource {
-    typealias ModelType = String
+    typealias ItemType = String
     
     fileprivate(set) var items = [
         "Item 0",

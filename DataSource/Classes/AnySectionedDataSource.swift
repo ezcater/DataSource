@@ -8,7 +8,7 @@
 
 import Foundation
 
-private class AnySectionedDataSourceBase<ModelType, SectionType>: SectionedDataSource {
+private class AnySectionedDataSourceBase<ItemType, SectionType>: SectionedDataSource {
     init() {
         guard type(of: self) != AnySectionedDataSourceBase.self else {
             fatalError("AnySectionedDataSourceBase is an abstract class")
@@ -30,7 +30,7 @@ private class AnySectionedDataSourceBase<ModelType, SectionType>: SectionedDataS
         fatalError("Must override")
     }
     
-    func item(at indexPath: IndexPath) -> ModelType? {
+    func item(at indexPath: IndexPath) -> ItemType? {
         fatalError("Must override")
     }
     
@@ -49,7 +49,7 @@ private class AnySectionedDataSourceBase<ModelType, SectionType>: SectionedDataS
     }
 }
 
-private final class AnySectionedDataSourceBox<Concrete: SectionedDataSource>: AnySectionedDataSourceBase<Concrete.ModelType, Concrete.SectionType> {
+private final class AnySectionedDataSourceBox<Concrete: SectionedDataSource>: AnySectionedDataSourceBase<Concrete.ItemType, Concrete.SectionType> {
     var concrete: Concrete
     
     init(concrete: Concrete) {
@@ -75,7 +75,7 @@ private final class AnySectionedDataSourceBox<Concrete: SectionedDataSource>: An
         return concrete.numberOfItems(in: section)
     }
     
-    override func item(at indexPath: IndexPath) -> ModelType? {
+    override func item(at indexPath: IndexPath) -> ItemType? {
         return concrete.item(at: indexPath)
     }
     
@@ -94,10 +94,10 @@ private final class AnySectionedDataSourceBox<Concrete: SectionedDataSource>: An
     }
 }
 
-public final class AnySectionedDataSource<ModelType, SectionType>: SectionedDataSource {
-    private let box: AnySectionedDataSourceBase<ModelType, SectionType>
+public final class AnySectionedDataSource<ItemType, SectionType>: SectionedDataSource {
+    private let box: AnySectionedDataSourceBase<ItemType, SectionType>
     
-    public init<Concrete: SectionedDataSource>(dataSource: Concrete) where Concrete.ModelType == ModelType, Concrete.SectionType == SectionType {
+    public init<Concrete: SectionedDataSource>(dataSource: Concrete) where Concrete.ItemType == ItemType, Concrete.SectionType == SectionType {
         box = AnySectionedDataSourceBox(concrete: dataSource)
     }
     
@@ -120,7 +120,7 @@ public final class AnySectionedDataSource<ModelType, SectionType>: SectionedData
         return box.numberOfItems(in: section)
     }
     
-    public func item(at indexPath: IndexPath) -> ModelType? {
+    public func item(at indexPath: IndexPath) -> ItemType? {
         return box.item(at: indexPath)
     }
     

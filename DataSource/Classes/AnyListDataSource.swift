@@ -8,7 +8,7 @@
 
 import Foundation
 
-private class AnyListDataSourceBase<ModelType>: ListDataSource {
+private class AnyListDataSourceBase<ItemType>: ListDataSource {
     init() {
         guard type(of: self) != AnyListDataSourceBase.self else {
             fatalError("AnyListDataSourceBase is an abstract class")
@@ -30,18 +30,18 @@ private class AnyListDataSourceBase<ModelType>: ListDataSource {
         fatalError("Must override")
     }
     
-    func item(at indexPath: IndexPath) -> ModelType? {
+    func item(at indexPath: IndexPath) -> ItemType? {
         fatalError("Must override")
     }
     
     // ListDataSource
     
-    var items: [ModelType] {
+    var items: [ItemType] {
         fatalError("Must override")
     }
 }
 
-private final class AnyListDataSourceBox<Concrete: ListDataSource>: AnyListDataSourceBase<Concrete.ModelType> {
+private final class AnyListDataSourceBox<Concrete: ListDataSource>: AnyListDataSourceBase<Concrete.ItemType> {
     var concrete: Concrete
     
     init(concrete: Concrete) {
@@ -67,21 +67,21 @@ private final class AnyListDataSourceBox<Concrete: ListDataSource>: AnyListDataS
         return concrete.numberOfItems(in: section)
     }
     
-    override func item(at indexPath: IndexPath) -> ModelType? {
+    override func item(at indexPath: IndexPath) -> ItemType? {
         return concrete.item(at: indexPath)
     }
     
     // ListDataSource
     
-    override var items: [ModelType] {
+    override var items: [ItemType] {
         return concrete.items
     }
 }
 
-public final class AnyListDataSource<ModelType>: ListDataSource {
-    private let box: AnyListDataSourceBase<ModelType>
+public final class AnyListDataSource<ItemType>: ListDataSource {
+    private let box: AnyListDataSourceBase<ItemType>
     
-    public init<Concrete: ListDataSource>(dataSource: Concrete) where Concrete.ModelType == ModelType {
+    public init<Concrete: ListDataSource>(dataSource: Concrete) where Concrete.ItemType == ItemType {
         box = AnyListDataSourceBox(concrete: dataSource)
     }
     
@@ -104,13 +104,13 @@ public final class AnyListDataSource<ModelType>: ListDataSource {
         return box.numberOfItems(in: section)
     }
     
-    public func item(at indexPath: IndexPath) -> ModelType? {
+    public func item(at indexPath: IndexPath) -> ItemType? {
         return box.item(at: indexPath)
     }
     
     // ListDataSource
     
-    public var items: [ModelType] {
+    public var items: [ItemType] {
         return box.items
     }
 }

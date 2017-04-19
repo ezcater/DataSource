@@ -55,7 +55,7 @@ class ListDataSourceTests: XCTestCase {
 }
 
 class TestListDataSource: ListDataSource {
-    typealias ModelType = String
+    typealias ItemType = String
     
     var items: [String]
     var reloadBlock: ReloadBlock?

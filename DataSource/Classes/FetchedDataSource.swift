@@ -10,18 +10,18 @@ import Foundation
 import CoreData
 
 /**
- `FetchedDataSource` is a protocol for representing a `NSFetchedResultsController` based data source. `ModelType` represents an
+ `FetchedDataSource` is a protocol for representing a `NSFetchedResultsController` based data source. `ItemType` represents an
  `NSFetchRequestResult` conforming type contained within the data source.
  */
 
 public protocol FetchedDataSource: DataSource {
-    associatedtype ModelType: NSFetchRequestResult
+    associatedtype ItemType: NSFetchRequestResult
     
     /**
      Backing `NSFetchedResultsController` for the data source
      */
     
-    var fetchedResultsController: NSFetchedResultsController<ModelType> { get }
+    var fetchedResultsController: NSFetchedResultsController<ItemType> { get }
     
     func registerForFetchedChanges()
     func unregisterForFetchedChanges()
@@ -50,7 +50,7 @@ public extension FetchedDataSource {
         return sections[section].numberOfObjects
     }
     
-    func item(at indexPath: IndexPath) -> ModelType? {
+    func item(at indexPath: IndexPath) -> ItemType? {
         guard indexPath.section >= 0, indexPath.item >= 0 else {
             return nil
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-private class AnyDataSourceBase<ModelType>: DataSource {
+private class AnyDataSourceBase<ItemType>: DataSource {
     init() {
         guard type(of: self) != AnyDataSourceBase.self else {
             fatalError("AnyDataSourceBase is an abstract class")
@@ -28,12 +28,12 @@ private class AnyDataSourceBase<ModelType>: DataSource {
         fatalError("Must override")
     }
     
-    func item(at indexPath: IndexPath) -> ModelType? {
+    func item(at indexPath: IndexPath) -> ItemType? {
         fatalError("Must override")
     }
 }
 
-private final class AnyDataSourceBox<Concrete: DataSource>: AnyDataSourceBase<Concrete.ModelType> {
+private final class AnyDataSourceBox<Concrete: DataSource>: AnyDataSourceBase<Concrete.ItemType> {
     var concrete: Concrete
     
     init(concrete: Concrete) {
@@ -57,15 +57,15 @@ private final class AnyDataSourceBox<Concrete: DataSource>: AnyDataSourceBase<Co
         return concrete.numberOfItems(in: section)
     }
     
-    override func item(at indexPath: IndexPath) -> ModelType? {
+    override func item(at indexPath: IndexPath) -> ItemType? {
         return concrete.item(at: indexPath)
     }
 }
 
-public final class AnyDataSource<ModelType>: DataSource {
-    private let box: AnyDataSourceBase<ModelType>
+public final class AnyDataSource<ItemType>: DataSource {
+    private let box: AnyDataSourceBase<ItemType>
     
-    public init<Concrete: DataSource>(dataSource: Concrete) where Concrete.ModelType == ModelType {
+    public init<Concrete: DataSource>(dataSource: Concrete) where Concrete.ItemType == ItemType {
         box = AnyDataSourceBox(concrete: dataSource)
     }
         
@@ -86,7 +86,7 @@ public final class AnyDataSource<ModelType>: DataSource {
         return box.numberOfItems(in: section)
     }
     
-    public func item(at indexPath: IndexPath) -> ModelType? {
+    public func item(at indexPath: IndexPath) -> ItemType? {
         return box.item(at: indexPath)
     }
 }

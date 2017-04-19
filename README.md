@@ -7,17 +7,17 @@
 
 DataSource is a concise and UI independent protocol for representing data sources. It can be used out of the box, but is also extremely flexible in case any customization is required.
 
-At it's core, `DataSource` is a simple protocol. It requires a `ModelType`, which represents the type of the contained objects. It also requires a way to retrieve the section count, item count in a section, and an item at a specified index path.
+At it's core, `DataSource` is a simple protocol. It requires a `ItemType`, which represents the type of the contained objects. It also requires a way to retrieve the section count, item count in a section, and an item at a specified index path.
 
 ```swift
 public protocol DataSource {
-    associatedtype ModelType
+    associatedtype ItemType
 
     var reloadBlock: ReloadBlock? { get set }
     var numberOfSections: Int { get }
     
     func numberOfItems(in section: Int) -> Int
-    func item(at indexPath: IndexPath) -> ModelType?
+    func item(at indexPath: IndexPath) -> ItemType?
 }
 ```
 
@@ -33,7 +33,7 @@ public typealias ReloadBlock = ([IndexPath]) -> Void
     
 ```swift
 public protocol ListDataSource: DataSource {
-    var items: [ModelType] { get }
+    var items: [ItemType] { get }
 }
 ```
 
@@ -41,13 +41,13 @@ It includes default implementations for:
 
 - `var numberOfSections: Int`
 - `func numberOfItems(in section: Int) -> Int`
-- `func item(at indexPath: IndexPath) -> ModelType?`
+- `func item(at indexPath: IndexPath) -> ItemType?`
 
 #### Example
 
 ```swift
 class SimpleDataSource: ListDataSource {
-    typealias ModelType = String
+    typealias ItemType = String
     
     var items = [
         "Item 0",
@@ -65,7 +65,7 @@ class SimpleDataSource: ListDataSource {
 
 ```swift
 public protocol SectionedDataSource: DataSource {
-    associatedtype SectionType: Section<ModelType>
+    associatedtype SectionType: Section<ItemType>
     
     var sections: [SectionType] { get }
     
@@ -78,7 +78,7 @@ It includes default implementations for:
 
 - `var numberOfSections: Int`
 - `func numberOfItems(in section: Int) -> Int`
-- `func item(at indexPath: IndexPath) -> ModelType?`
+- `func item(at indexPath: IndexPath) -> ItemType?`
 - `func headerTitle(for section: Int) -> String?`
 - `func footerTitle(for section: Int) -> String?`
 
@@ -86,7 +86,7 @@ It includes default implementations for:
 
 ```swift
 class SimpleDataSource: SectionedDataSource {
-    typealias ModelType = String
+    typealias ItemType = String
     typealias SectionType = Section<String>
     
     var sections = [
@@ -101,15 +101,15 @@ class SimpleDataSource: SectionedDataSource {
 
 ## Section
 
-`Section` objects each represent a single section. It includes an array of `ModelType` items and optionally a header or footer title. It is subclassable if  any additional functionality is needed.
+`Section` objects each represent a single section. It includes an array of `ItemType` items and optionally a header or footer title. It is subclassable if  any additional functionality is needed.
 
 ```swift
-open class Section<ModelType> {
-    public var items: [ModelType]
+open class Section<ItemType> {
+    public var items: [ItemType]
     public var headerTitle: String?
     public var footerTitle: String?
     
-    public init(items: [ModelType], headerTitle: String? = nil, footerTitle: String? = nil) {
+    public init(items: [ItemType], headerTitle: String? = nil, footerTitle: String? = nil) {
         self.items = items
         self.headerTitle = headerTitle
         self.footerTitle = footerTitle
@@ -123,9 +123,9 @@ open class Section<ModelType> {
 
 ```swift
 public protocol FetchedDataSource: DataSource {
-    associatedtype ModelType: NSFetchRequestResult
+    associatedtype ItemType: NSFetchRequestResult
     
-    var fetchedResultsController: NSFetchedResultsController<ModelType> { get }
+    var fetchedResultsController: NSFetchedResultsController<ItemType> { get }
 }
 ```
 
@@ -133,7 +133,7 @@ It includes default implementations for:
 
 - `var numberOfSections: Int`
 - `func numberOfItems(in section: Int) -> Int`
-- `func item(at indexPath: IndexPath) -> ModelType?`
+- `func item(at indexPath: IndexPath) -> ItemType?`
 
 
 ## Requirements

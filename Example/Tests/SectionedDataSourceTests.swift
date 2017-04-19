@@ -105,7 +105,7 @@ class SectionedDataSourceTests: XCTestCase {
 }
 
 class TestSectionedDataSource: SectionedDataSource {
-    typealias ModelType = String
+    typealias ItemType = String
     
     var sections: [Section<String>]
     var reloadBlock: ReloadBlock?
