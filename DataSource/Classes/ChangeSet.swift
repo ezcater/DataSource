@@ -12,13 +12,8 @@ import CoreData
 public typealias ChangeSetCompletion = (Bool) -> Void
 
 public enum ChangeSet {
-    case none
     case some([Change])
     case all
-    
-    public init(changes: [Change]) {
-        self = changes.isEmpty ? .none : .some(changes)
-    }
 }
 
 // MARK: - Change
@@ -71,8 +66,6 @@ public enum ChangeType {
 public extension UITableView {
     func performUpdates(withChangeSet changeSet: ChangeSet, completion: ChangeSetCompletion? = nil) {
         switch changeSet {
-        case .none:
-            completion?(true)
         case .some(let changes):
             CATransaction.begin()
             CATransaction.setCompletionBlock {
@@ -127,8 +120,6 @@ public extension UITableView {
 public extension UICollectionView {
     func performUpdates(withChangeSet changeSet: ChangeSet, completion: ChangeSetCompletion? = nil) {
         switch changeSet {
-        case .none:
-            completion?(true)
         case .some(let changes):
             let updates = {
                 changes.forEach { change in

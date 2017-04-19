@@ -49,7 +49,10 @@ extension FetchedChangeProxy: NSFetchedResultsControllerDelegate {
     }
     
      func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        let changeSet = ChangeSet(changes: changes)
-        reloadBlock?(changeSet)
+        guard !changes.isEmpty else {
+            return
+        }
+        
+        reloadBlock?(.some(changes))
     }
 }
