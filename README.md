@@ -21,10 +21,31 @@ public protocol DataSource {
 }
 ```
 
-It uses a closure, `ReloadBlock`, to communicate changes in the backing data. The intended usage is to pass an array of dirty index paths or an empty array to signify that all index paths should be reloaded.
+It uses a closure, `ReloadBlock`, to communicate a `ChangeSet` in the backing data.
 
 ```swift
-public typealias ReloadBlock = ([IndexPath]) -> Void
+public typealias ReloadBlock = (ChangeSet) -> Void
+```
+
+A `ChangeSet` is a set of `Change`s to be performed to the corresponding UI element (`UITableView` or `UICollectionView`).
+
+```swift
+public enum ChangeSet {
+    case some([Change])
+    case all
+}
+
+public enum Change {
+    case section(type: ChangeType)
+    case object(type: ChangeType)
+}
+
+public enum ChangeType {
+    case insert(IndexPath)
+    case delete(IndexPath)
+    case move(IndexPath, IndexPath)
+    case update(IndexPath)
+}
 ```
 
 ## ListDataSource
