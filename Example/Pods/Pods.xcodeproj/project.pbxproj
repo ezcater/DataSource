@@ -17,6 +17,8 @@
 		483203941EA7F9E4003301F5 /* AnyFetchedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483203931EA7F9E4003301F5 /* AnyFetchedDataSource.swift */; };
 		4874FE1B1E8C440700C24E19 /* FetchedChangeProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4874FE1A1E8C440700C24E19 /* FetchedChangeProxy.swift */; };
 		4874FE1D1E8C445E00C24E19 /* ChangeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4874FE1C1E8C445E00C24E19 /* ChangeSet.swift */; };
+		48859DD11EAE8BBC00217877 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48859DD01EAE8BBC00217877 /* UICollectionView+Extensions.swift */; };
+		48859DD31EAE8BC700217877 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48859DD21EAE8BC700217877 /* UITableView+Extensions.swift */; };
 		4970A026E9B69F5861480F105E5CC78A /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7527019FE8F04EB8D08E40ABBC4756D /* Section.swift */; };
 		5253AA213A2E18FC46A3D6E4C2F77105 /* DataSource-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 590716D53957E7470F74F303CAD39350 /* DataSource-dummy.m */; };
 		842FAA7D151A0B132757C830024F1CEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
@@ -64,6 +66,8 @@
 		483203931EA7F9E4003301F5 /* AnyFetchedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyFetchedDataSource.swift; sourceTree = "<group>"; };
 		4874FE1A1E8C440700C24E19 /* FetchedChangeProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedChangeProxy.swift; sourceTree = "<group>"; };
 		4874FE1C1E8C445E00C24E19 /* ChangeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSet.swift; sourceTree = "<group>"; };
+		48859DD01EAE8BBC00217877 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		48859DD21EAE8BC700217877 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		4F01D78A41B82A9CFF09B17738C6A808 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F6F501DA8277D0CE90000903AE1E41C /* Pods-DataSource_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DataSource_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		590716D53957E7470F74F303CAD39350 /* DataSource-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DataSource-dummy.m"; sourceTree = "<group>"; };
@@ -176,6 +180,15 @@
 			name = FetchedDataSource;
 			sourceTree = "<group>";
 		};
+		48859DCF1EAE8BAB00217877 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				48859DD01EAE8BBC00217877 /* UICollectionView+Extensions.swift */,
+				48859DD21EAE8BC700217877 /* UITableView+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		4D4B0A4510A712FEEC47DD3E6AB6B5C6 /* Pods-DataSource_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +246,7 @@
 		8AA402CB828B0542F0CE1507F8298432 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				48859DCF1EAE8BAB00217877 /* Extensions */,
 				48859DCB1EADA07E00217877 /* DataSource */,
 				48859DCC1EADA08B00217877 /* ListDataSource */,
 				48859DCD1EADA09500217877 /* SectionedDataSource */,
@@ -424,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				483203901EA7F2BF003301F5 /* AnySectionedDataSource.swift in Sources */,
+				48859DD31EAE8BC700217877 /* UITableView+Extensions.swift in Sources */,
 				4832038E1EA7F29D003301F5 /* AnyDataSource.swift in Sources */,
 				5253AA213A2E18FC46A3D6E4C2F77105 /* DataSource-dummy.m in Sources */,
 				A311C3B1599A87FA0B9712BA3DCA2C3D /* DataSource.swift in Sources */,
@@ -433,6 +448,7 @@
 				4874FE1D1E8C445E00C24E19 /* ChangeSet.swift in Sources */,
 				0ACAE1DBFDFEE267B4E0A04D95EBD35D /* SectionedDataSource.swift in Sources */,
 				483203921EA7F409003301F5 /* AnyListDataSource.swift in Sources */,
+				48859DD11EAE8BBC00217877 /* UICollectionView+Extensions.swift in Sources */,
 				4874FE1B1E8C440700C24E19 /* FetchedChangeProxy.swift in Sources */,
 				483203941EA7F9E4003301F5 /* AnyFetchedDataSource.swift in Sources */,
 			);
