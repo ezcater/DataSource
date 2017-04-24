@@ -20,7 +20,7 @@ public enum ChangeSet {
 
 public enum Change {
     case section(type: ChangeType)
-    case object(type: ChangeType)
+    case item(type: ChangeType)
 }
 
 // MARK: - ChangeType

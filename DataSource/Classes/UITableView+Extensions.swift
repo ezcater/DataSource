@@ -37,7 +37,7 @@ public extension UITableView {
                         reloadSections(indexSet, with: .none)
                     }
                     
-                case .object(let type):
+                case .item(let type):
                     switch type {
                     case .insert(let indexPath):
                         insertRows(at: [indexPath], with: .none)

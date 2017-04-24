@@ -31,7 +31,7 @@ public extension UICollectionView {
                             self.reloadSections(indexSet)
                         }
                         
-                    case .object(let type):
+                    case .item(let type):
                         switch type {
                         case .insert(let indexPath):
                             self.insertItems(at: [indexPath])

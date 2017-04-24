@@ -44,7 +44,7 @@ extension FetchedChangeProxy: NSFetchedResultsControllerDelegate {
             return
         }
         
-        let change = Change.object(type: changeType)
+        let change = Change.item(type: changeType)
         changes.append(change)
     }
     
