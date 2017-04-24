@@ -31,6 +31,7 @@ class FetchedViewController: UIViewController {
         view = UIView()
         
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -41,13 +42,8 @@ class FetchedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource.reloadBlock = { [weak self] indexPaths in
-            if indexPaths.isEmpty {
-                self?.tableView.reloadData()
-            }
-            else {
-                self?.tableView.reloadRows(at: indexPaths, with: .none)
-            }
+        dataSource.reloadBlock = { [weak self] changeSet in
+            self?.tableView.performUpdates(withChangeSet: changeSet)
         }
     }
     
@@ -78,5 +74,25 @@ extension FetchedViewController: UITableViewDataSource {
         let item = dataSource.item(at: indexPath)
         cell.textLabel?.text = item?.title
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else {
+            return
+        }
+        
+        dataSource.deleteItem(at: indexPath)
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension FetchedViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
     }
 }

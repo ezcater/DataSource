@@ -80,18 +80,10 @@ class TestFetchedDataSource: NSObject, FetchedDataSource {
         
         super.init()
         
-        fetchedResultsController.delegate = self
+        registerForFetchedChanges()
     }
     
     deinit {
-        fetchedResultsController.delegate = nil
-    }
-}
-
-// MARK: - NSFetchedResultsControllerDelegate
-
-extension TestFetchedDataSource: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        reloadBlock?([])
+        unregisterForFetchedChanges()
     }
 }

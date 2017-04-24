@@ -38,13 +38,8 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource.reloadBlock = { [weak self] indexPaths in
-            if indexPaths.isEmpty {
-                self?.tableView.reloadData()
-            }
-            else {
-                self?.tableView.reloadRows(at: indexPaths, with: .none)
-            }
+        dataSource.reloadBlock = { [weak self] changeSet in
+            self?.tableView.performUpdates(withChangeSet: changeSet)
         }
     }
     

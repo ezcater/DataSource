@@ -22,23 +22,23 @@ class SimpleFetchedDataSource: NSObject, FetchedDataSource {
         
         super.init()
         
-        fetchedResultsController.delegate = self
+        registerForFetchedChanges()
     }
     
     deinit {
-        fetchedResultsController.delegate = nil
+        unregisterForFetchedChanges()
     }
     
     func addItem() {
         let count = numberOfItems(in: 0)
         Item.addItem(withTitle: "Item \(count)")
     }
-}
-
-// MARK: - NSFetchedResultsControllerDelegate
-
-extension SimpleFetchedDataSource: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        reloadBlock?([])
+    
+    func deleteItem(at indexPath: IndexPath) {
+        guard let item = item(at: indexPath) else {
+            return
+        }
+        
+        Item.delete(item: item)
     }
 }
