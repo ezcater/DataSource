@@ -34,9 +34,17 @@ private class AnySectionedDataSourceBase<ItemType, SectionType>: SectionedDataSo
         fatalError("Must override")
     }
     
+    func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        fatalError("Must override")
+    }
+    
     // SectionedDataSource
     
     var sections: [SectionType] {
+        fatalError("Must override")
+    }
+    
+    func section(at index: Int) -> SectionType? {
         fatalError("Must override")
     }
     
@@ -79,10 +87,18 @@ private final class AnySectionedDataSourceBox<Concrete: SectionedDataSource>: An
         return concrete.item(at: indexPath)
     }
     
+    override func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        return concrete.indexPath(after: indexPath)
+    }
+    
     // SectionedDataSource
     
     override var sections: [SectionType] {
         return concrete.sections
+    }
+    
+    override func section(at index: Int) -> Concrete.SectionType? {
+        return concrete.section(at: index)
     }
     
     override func headerTitle(for section: Int) -> String? {
@@ -124,10 +140,18 @@ public final class AnySectionedDataSource<ItemType, SectionType>: SectionedDataS
         return box.item(at: indexPath)
     }
     
+    public func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        return box.indexPath(after: indexPath)
+    }
+    
     // SectionedDataSource
     
     public var sections: [SectionType] {
         return box.sections
+    }
+    
+    public func section(at index: Int) -> SectionType? {
+        return box.section(at: index)
     }
     
     public func headerTitle(for section: Int) -> String? {

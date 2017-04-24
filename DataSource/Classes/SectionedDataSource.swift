@@ -19,8 +19,18 @@ public protocol SectionedDataSource: DataSource {
     /**
      Backing array of `SectionType` elements which represent all of the sections.
      */
-    
+
     var sections: [SectionType] { get }
+
+    /**
+     Returns the section at the specified index.
+     
+     - Parameter index: Represents the desired section index
+     
+     - Returns: The section at the specified index, or `nil` if the data source does not contain one at the supplied index
+     */
+    
+    func section(at index: Int) -> SectionType?
     
     /**
      Returns the header title for a specificed section.
@@ -80,6 +90,34 @@ public extension SectionedDataSource where SectionType: Section<ItemType> {
         return section.items[indexPath.item]
     }
     
+    func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        guard indexPath.section < sections.count else {
+            return nil
+        }
+        
+        let section = sections[indexPath.section]
+        
+        let nextItem = indexPath.item + 1
+        if nextItem < section.items.count {
+            return IndexPath(item: nextItem, section: indexPath.section)
+        }
+        
+        let nextSection = indexPath.section + 1
+        if nextSection < sections.count && !sections[nextSection].items.isEmpty {
+            return IndexPath(item: 0, section: nextSection)
+        }
+        
+        return nil
+    }
+    
+    func section(at index: Int) -> SectionType? {
+        guard index < sections.count else {
+            return nil
+        }
+        
+        return sections[index]
+    }
+    
     func headerTitle(for section: Int) -> String? {
         guard section >= 0 else {
             return nil
@@ -102,35 +140,5 @@ public extension SectionedDataSource where SectionType: Section<ItemType> {
         }
         
         return sections[section].footerTitle
-    }
-    
-    /**
-     Function to retrieve the next present index path, determined by
-     section and item.
-     
-     - Parameter indexPath: Preceeding index path
-     
-     - Returns: The index path after the specified `indexPath`, or `nil` if `indexPath`
-     is the last one
-     */
-    
-    func indexPath(after indexPath: IndexPath) -> IndexPath? {
-        guard indexPath.section < sections.count else {
-            return nil
-        }
-        
-        let section = sections[indexPath.section]
-        
-        let nextItem = indexPath.item + 1
-        if nextItem < section.items.count {
-            return IndexPath(item: nextItem, section: indexPath.section)
-        }
-        
-        let nextSection = indexPath.section + 1
-        if nextSection < sections.count && !sections[nextSection].items.isEmpty {
-            return IndexPath(item: 0, section: nextSection)
-        }
-        
-        return nil
     }
 }

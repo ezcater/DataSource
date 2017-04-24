@@ -137,6 +137,45 @@
 			path = "Target Support Files/Pods-DataSource_Tests";
 			sourceTree = "<group>";
 		};
+		48859DCB1EADA07E00217877 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				47735ADFE3DE69E9D15E0C36DB91EBCC /* DataSource.swift */,
+				4832038D1EA7F29D003301F5 /* AnyDataSource.swift */,
+				4874FE1C1E8C445E00C24E19 /* ChangeSet.swift */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		48859DCC1EADA08B00217877 /* ListDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				8FA6B04FE9B4B1E7DEBA2D396B3176F9 /* ListDataSource.swift */,
+				483203911EA7F409003301F5 /* AnyListDataSource.swift */,
+			);
+			name = ListDataSource;
+			sourceTree = "<group>";
+		};
+		48859DCD1EADA09500217877 /* SectionedDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				795F68A2D460849EF1BBE82581D9F101 /* SectionedDataSource.swift */,
+				4832038F1EA7F2BF003301F5 /* AnySectionedDataSource.swift */,
+				D7527019FE8F04EB8D08E40ABBC4756D /* Section.swift */,
+			);
+			name = SectionedDataSource;
+			sourceTree = "<group>";
+		};
+		48859DCE1EADA0A800217877 /* FetchedDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				3C2ECB2770EF67B7DC77513A559EDE74 /* FetchedDataSource.swift */,
+				483203931EA7F9E4003301F5 /* AnyFetchedDataSource.swift */,
+				4874FE1A1E8C440700C24E19 /* FetchedChangeProxy.swift */,
+			);
+			name = FetchedDataSource;
+			sourceTree = "<group>";
+		};
 		4D4B0A4510A712FEEC47DD3E6AB6B5C6 /* Pods-DataSource_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,17 +233,10 @@
 		8AA402CB828B0542F0CE1507F8298432 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				47735ADFE3DE69E9D15E0C36DB91EBCC /* DataSource.swift */,
-				4832038D1EA7F29D003301F5 /* AnyDataSource.swift */,
-				4874FE1C1E8C445E00C24E19 /* ChangeSet.swift */,
-				3C2ECB2770EF67B7DC77513A559EDE74 /* FetchedDataSource.swift */,
-				483203931EA7F9E4003301F5 /* AnyFetchedDataSource.swift */,
-				4874FE1A1E8C440700C24E19 /* FetchedChangeProxy.swift */,
-				8FA6B04FE9B4B1E7DEBA2D396B3176F9 /* ListDataSource.swift */,
-				483203911EA7F409003301F5 /* AnyListDataSource.swift */,
-				D7527019FE8F04EB8D08E40ABBC4756D /* Section.swift */,
-				795F68A2D460849EF1BBE82581D9F101 /* SectionedDataSource.swift */,
-				4832038F1EA7F2BF003301F5 /* AnySectionedDataSource.swift */,
+				48859DCB1EADA07E00217877 /* DataSource */,
+				48859DCC1EADA08B00217877 /* ListDataSource */,
+				48859DCD1EADA09500217877 /* SectionedDataSource */,
+				48859DCE1EADA0A800217877 /* FetchedDataSource */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

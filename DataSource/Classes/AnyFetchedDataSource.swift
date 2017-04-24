@@ -35,6 +35,10 @@ private class AnyFetchedDataSourceBase<ItemType: NSFetchRequestResult>: FetchedD
         fatalError("Must override")
     }
     
+    func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        fatalError("Must override")
+    }
+    
     // FetchedDataSource
     
     var fetchedResultsController: NSFetchedResultsController<ItemType> {
@@ -80,6 +84,10 @@ private final class AnyFetchedDataSourceBox<Concrete: FetchedDataSource>: AnyFet
         return concrete.item(at: indexPath)
     }
     
+    override func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        return concrete.indexPath(after: indexPath)
+    }
+    
     // FetchedDataSource
     
     override var fetchedResultsController: NSFetchedResultsController<ItemType> {
@@ -123,6 +131,10 @@ public final class AnyFetchedDataSource<ItemType: NSFetchRequestResult>: Fetched
     
     public func item(at indexPath: IndexPath) -> ItemType? {
         return box.item(at: indexPath)
+    }
+    
+    public func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        return box.indexPath(after: indexPath)
     }
     
     // FetchedDataSource

@@ -54,4 +54,16 @@ public protocol DataSource: class {
      */
     
     func item(at indexPath: IndexPath) -> ItemType?
+    
+    /**
+     Function to retrieve the next present index path, determined by
+     section and item.
+     
+     - Parameter indexPath: Preceeding index path
+     
+     - Returns: The index path after the specified `indexPath`, or `nil` if `indexPath`
+     is the last one
+     */
+    
+    func indexPath(after indexPath: IndexPath) -> IndexPath?
 }

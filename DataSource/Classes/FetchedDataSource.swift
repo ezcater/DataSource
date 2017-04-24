@@ -67,6 +67,26 @@ public extension FetchedDataSource {
         
         return fetchedResultsController.object(at: indexPath)
     }
+    
+    public func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        guard let sections = fetchedResultsController.sections, indexPath.section < sections.count else {
+            return nil
+        }
+        
+        let section = sections[indexPath.section]
+        
+        let nextItem = indexPath.item + 1
+        if nextItem < section.numberOfObjects {
+            return IndexPath(item: nextItem, section: indexPath.section)
+        }
+        
+        let nextSection = indexPath.section + 1
+        if nextSection < sections.count && sections[nextSection].numberOfObjects > 0 {
+            return IndexPath(item: 0, section: nextSection)
+        }
+        
+        return nil
+    }
 }
 
 // MARK: - Public

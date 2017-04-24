@@ -29,9 +29,6 @@ class SectionedDataSourceTests: XCTestCase {
         section = 2
         XCTAssertEqual(1, dataSource.numberOfItems(in: section))
         XCTAssertEqual(dataSource.sections[section].items.count, dataSource.numberOfItems(in: section))
-        
-        section = -1
-        XCTAssertEqual(0, dataSource.numberOfItems(in: section))
     }
     
     func testItems() {
@@ -63,14 +60,6 @@ class SectionedDataSourceTests: XCTestCase {
         
         indexPath.item = 1
         XCTAssertNil(dataSource.item(at: indexPath))
-        
-        indexPath.item = -1
-        indexPath.section = 0
-        XCTAssertNil(dataSource.item(at: indexPath))
-        
-        indexPath.item = 0
-        indexPath.section = -1
-        XCTAssertNil(dataSource.item(at: indexPath))
     }
     
     func testHeaderFooterTitles() {
@@ -97,10 +86,6 @@ class SectionedDataSourceTests: XCTestCase {
         section = 2
         XCTAssertEqual("footer2", dataSource.footerTitle(for: section))
         XCTAssertEqual(dataSource.sections[section].footerTitle, dataSource.footerTitle(for: section))
-        
-        section = -1
-        XCTAssertNil(dataSource.headerTitle(for: section))
-        XCTAssertNil(dataSource.footerTitle(for: section))
     }
 }
 

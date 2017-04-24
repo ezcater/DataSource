@@ -31,6 +31,10 @@ private class AnyDataSourceBase<ItemType>: DataSource {
     func item(at indexPath: IndexPath) -> ItemType? {
         fatalError("Must override")
     }
+    
+    func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        fatalError("Must override")
+    }
 }
 
 private final class AnyDataSourceBox<Concrete: DataSource>: AnyDataSourceBase<Concrete.ItemType> {
@@ -60,6 +64,10 @@ private final class AnyDataSourceBox<Concrete: DataSource>: AnyDataSourceBase<Co
     override func item(at indexPath: IndexPath) -> ItemType? {
         return concrete.item(at: indexPath)
     }
+    
+    override func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        return concrete.indexPath(after: indexPath)
+    }
 }
 
 public final class AnyDataSource<ItemType>: DataSource {
@@ -88,5 +96,9 @@ public final class AnyDataSource<ItemType>: DataSource {
     
     public func item(at indexPath: IndexPath) -> ItemType? {
         return box.item(at: indexPath)
+    }
+    
+    public func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        return box.indexPath(after: indexPath)
     }
 }
