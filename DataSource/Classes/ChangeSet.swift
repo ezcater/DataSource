@@ -20,7 +20,7 @@ public enum ChangeSet {
 
 public enum Change {
     case section(type: ChangeType)
-    case object(type: ChangeType)
+    case item(type: ChangeType)
 }
 
 // MARK: - ChangeType
@@ -91,7 +91,7 @@ public extension UITableView {
                         reloadSections(indexSet, with: .none)
                     }
                     
-                case .object(let type):
+                case .item(let type):
                     switch type {
                     case .insert(let indexPath):
                         insertRows(at: [indexPath], with: .none)
@@ -139,7 +139,7 @@ public extension UICollectionView {
                             self.reloadSections(indexSet)
                         }
                         
-                    case .object(let type):
+                    case .item(let type):
                         switch type {
                         case .insert(let indexPath):
                             self.insertItems(at: [indexPath])
