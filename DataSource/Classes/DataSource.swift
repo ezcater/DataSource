@@ -17,11 +17,11 @@ public typealias ReloadBlock = (ChangeSet) -> Void
 /**
  `DataSource` is a protocol for representing a backing data source. It is UI-independent and tailored for use with
  `UITableView` and `UICollectionView`. It utilizes `IndexPath` to access items and a `ReloadBlock` to communicate changes. 
- `ModelType` represents the type of items contained within the data source.
+ `ItemType` represents the type of items contained within the data source.
  */
 
 public protocol DataSource: class {
-    associatedtype ModelType
+    associatedtype ItemType
     
     /**
      Callback to signify that the backing data has changed.
@@ -53,5 +53,17 @@ public protocol DataSource: class {
      - Returns: The item at the specified `indexPath`, or `nil` if the data source does not contain `indexPath`
      */
     
-    func item(at indexPath: IndexPath) -> ModelType?
+    func item(at indexPath: IndexPath) -> ItemType?
+    
+    /**
+     Function to retrieve the next present index path, determined by
+     section and item.
+     
+     - Parameter indexPath: Preceeding index path
+     
+     - Returns: The index path after the specified `indexPath`, or `nil` if `indexPath`
+     is the last one
+     */
+    
+    func indexPath(after indexPath: IndexPath) -> IndexPath?
 }

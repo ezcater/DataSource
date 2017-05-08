@@ -43,19 +43,11 @@ class ListDataSourceTests: XCTestCase {
         indexPath.item = 0
         indexPath.section = 1
         XCTAssertNil(dataSource.item(at: indexPath))
-        
-        indexPath.item = -1
-        indexPath.section = 0
-        XCTAssertNil(dataSource.item(at: indexPath))
-        
-        indexPath.item = 0
-        indexPath.section = -1
-        XCTAssertNil(dataSource.item(at: indexPath))
     }
 }
 
 class TestListDataSource: ListDataSource {
-    typealias ModelType = String
+    typealias ItemType = String
     
     var items: [String]
     var reloadBlock: ReloadBlock?

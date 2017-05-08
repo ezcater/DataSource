@@ -11,7 +11,7 @@ import CoreData
 import DataSource
 
 class SimpleFetchedDataSource: NSObject, FetchedDataSource {
-    typealias ModelType = Item
+    typealias ItemType = Item
     
     fileprivate(set) var fetchedResultsController: NSFetchedResultsController<Item>
     

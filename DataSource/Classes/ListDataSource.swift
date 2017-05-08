@@ -16,10 +16,10 @@ import Foundation
 public protocol ListDataSource: DataSource {
     
     /**
-     Backing array of `ModelType` elements which represents a single section.
+     Backing array of `ItemType` elements which represents a single section.
      */
     
-    var items: [ModelType] { get }
+    var items: [ItemType] { get }
 }
 
 // MARK: - Public
@@ -30,10 +30,6 @@ public extension ListDataSource {
     }
     
     func numberOfItems(in section: Int) -> Int {
-        guard section >= 0 else {
-            return 0
-        }
-        
         guard section == 0 else {
             return 0
         }
@@ -41,15 +37,25 @@ public extension ListDataSource {
         return items.count
     }
     
-    func item(at indexPath: IndexPath) -> ModelType? {
-        guard indexPath.section >= 0, indexPath.item >= 0 else {
-            return nil
-        }
-        
+    func item(at indexPath: IndexPath) -> ItemType? {
         guard indexPath.section == 0 && indexPath.item < items.count else {
             return nil
         }
         
         return items[indexPath.item]
+    }
+    
+    func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        guard indexPath.section == 0 else {
+            return nil
+        }
+        
+        let nextItem = indexPath.item + 1
+        
+        guard nextItem < items.count else {
+            return nil
+        }
+        
+        return IndexPath(item: nextItem, section: 0)
     }
 }

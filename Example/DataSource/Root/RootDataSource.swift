@@ -11,7 +11,7 @@ import UIKit
 import DataSource
 
 class RootDataSource: ListDataSource {
-    typealias ModelType = UIViewController
+    typealias ItemType = UIViewController
     
     fileprivate(set) var items = [
         ListViewController(nibName: nil, bundle: nil),

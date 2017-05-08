@@ -10,7 +10,7 @@ import Foundation
 import DataSource
 
 class SimpleSectionedDataSource: SectionedDataSource {
-    typealias ModelType = String
+    typealias ItemType = String
     typealias SectionType = Section<String>
     
     fileprivate(set) var sections = [

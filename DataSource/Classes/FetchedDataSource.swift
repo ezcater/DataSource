@@ -10,18 +10,18 @@ import Foundation
 import CoreData
 
 /**
- `FetchedDataSource` is a protocol for representing a `NSFetchedResultsController` based data source. `ModelType` represents an
+ `FetchedDataSource` is a protocol for representing a `NSFetchedResultsController` based data source. `ItemType` represents an
  `NSFetchRequestResult` conforming type contained within the data source.
  */
 
 public protocol FetchedDataSource: DataSource {
-    associatedtype ModelType: NSFetchRequestResult
+    associatedtype ItemType: NSFetchRequestResult
     
     /**
      Backing `NSFetchedResultsController` for the data source
      */
     
-    var fetchedResultsController: NSFetchedResultsController<ModelType> { get }
+    var fetchedResultsController: NSFetchedResultsController<ItemType> { get }
     
     func registerForFetchedChanges()
     func unregisterForFetchedChanges()
@@ -50,7 +50,7 @@ public extension FetchedDataSource {
         return sections[section].numberOfObjects
     }
     
-    func item(at indexPath: IndexPath) -> ModelType? {
+    func item(at indexPath: IndexPath) -> ItemType? {
         guard indexPath.section >= 0, indexPath.item >= 0 else {
             return nil
         }
@@ -66,6 +66,26 @@ public extension FetchedDataSource {
         }
         
         return fetchedResultsController.object(at: indexPath)
+    }
+    
+    public func indexPath(after indexPath: IndexPath) -> IndexPath? {
+        guard let sections = fetchedResultsController.sections, indexPath.section < sections.count else {
+            return nil
+        }
+        
+        let section = sections[indexPath.section]
+        
+        let nextItem = indexPath.item + 1
+        if nextItem < section.numberOfObjects {
+            return IndexPath(item: nextItem, section: indexPath.section)
+        }
+        
+        let nextSection = indexPath.section + 1
+        if nextSection < sections.count && sections[nextSection].numberOfObjects > 0 {
+            return IndexPath(item: 0, section: nextSection)
+        }
+        
+        return nil
     }
 }
 
