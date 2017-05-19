@@ -174,7 +174,7 @@ pod "DataSource"
 
 ## Author
 
-Brad Smith, bradley.d.smith11@gmail.com
+Brad Smith, bsmith@ezcater.com
 
 ## License
 
