@@ -1,9 +1,6 @@
 # DataSource
 
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org)
-[![Version](https://img.shields.io/cocoapods/v/DataSource.svg?style=flat)](http://cocoapods.org/pods/DataSource)
-[![License](https://img.shields.io/cocoapods/l/DataSource.svg?style=flat)](http://cocoapods.org/pods/DataSource)
-[![Platform](https://img.shields.io/cocoapods/p/DataSource.svg?style=flat)](http://cocoapods.org/pods/DataSource)
 
 DataSource is a concise and UI independent protocol for representing data sources. It can be used out of the box, but is also extremely flexible in case any customization is required.
 
