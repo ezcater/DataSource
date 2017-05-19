@@ -1,11 +1,6 @@
-#
-# Be sure to run `pod lib lint DataSource.podspec' to ensure this is a
-# valid spec before submitting.
-#
-
 Pod::Spec.new do |s|
   s.name             = 'DataSource'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'Concise, flexible, and UI independent protocol for data sources'
   s.description      = <<-DESC
   Concise, flexible, and UI independent protocol for data sources.
