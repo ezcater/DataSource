@@ -4,7 +4,7 @@
 
 DataSource is a concise and UI independent protocol for representing data sources. It can be used out of the box, but is also extremely flexible in case any customization is required.
 
-At it's core, `DataSource` is a simple protocol. It requires a `ItemType`, which represents the type of the contained objects. It also requires a way to retrieve the section count, item count in a section, and an item at a specified index path.
+At it's core, `DataSource` is a simple protocol. It requires a `ItemType`, which represents the type of the contained objects.
 
 ```swift
 public protocol DataSource {
@@ -15,6 +15,7 @@ public protocol DataSource {
     
     func numberOfItems(in section: Int) -> Int
     func item(at indexPath: IndexPath) -> ItemType?
+    func indexPath(after indexPath: IndexPath) -> IndexPath?
 }
 ```
 
@@ -60,6 +61,7 @@ It includes default implementations for:
 - `var numberOfSections: Int`
 - `func numberOfItems(in section: Int) -> Int`
 - `func item(at indexPath: IndexPath) -> ItemType?`
+- `func indexPath(after indexPath: IndexPath) -> IndexPath?`
 
 #### Example
 
@@ -97,6 +99,7 @@ It includes default implementations for:
 - `var numberOfSections: Int`
 - `func numberOfItems(in section: Int) -> Int`
 - `func item(at indexPath: IndexPath) -> ItemType?`
+- `func indexPath(after indexPath: IndexPath) -> IndexPath?`
 - `func headerTitle(for section: Int) -> String?`
 - `func footerTitle(for section: Int) -> String?`
 
@@ -152,7 +155,7 @@ It includes default implementations for:
 - `var numberOfSections: Int`
 - `func numberOfItems(in section: Int) -> Int`
 - `func item(at indexPath: IndexPath) -> ItemType?`
-
+- `func indexPath(after indexPath: IndexPath) -> IndexPath?`
 
 ## Requirements
 
