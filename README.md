@@ -89,6 +89,7 @@ public protocol SectionedDataSource: DataSource {
     
     var sections: [SectionType] { get }
     
+    func section(at index: Int) -> SectionType?
     func headerTitle(for section: Int) -> String?
     func footerTitle(for section: Int) -> String?
 }
@@ -100,6 +101,7 @@ It includes default implementations for:
 - `func numberOfItems(in section: Int) -> Int`
 - `func item(at indexPath: IndexPath) -> ItemType?`
 - `func indexPath(after indexPath: IndexPath) -> IndexPath?`
+- `func section(at index: Int) -> SectionType?`
 - `func headerTitle(for section: Int) -> String?`
 - `func footerTitle(for section: Int) -> String?`
 
