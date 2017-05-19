@@ -1,9 +1,9 @@
 {
   "name": "DataSource",
   "version": "0.1.0",
-  "summary": "A short description of DataSource.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Brad Smith/DataSource",
+  "summary": "Concise, flexible, and UI independent protocol for data sources",
+  "description": "Concise, flexible, and UI independent protocol for data sources.",
+  "homepage": "https://github.com/ezcater/DataSource",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,9 +12,10 @@
     "Brad Smith": "bradley.d.smith11@gmail.com"
   },
   "source": {
-    "git": "https://github.com/Brad Smith/DataSource.git",
+    "git": "https://github.com/ezcater/DataSource.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/bsmithers11",
   "platforms": {
     "ios": "8.0"
   },
