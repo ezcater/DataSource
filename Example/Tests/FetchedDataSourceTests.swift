@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import DataSource
+import EZDataSource
 import CoreData
 
 class FetchedDataSourceTests: XCTestCase {

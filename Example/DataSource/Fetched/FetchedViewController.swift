@@ -52,8 +52,12 @@ class FetchedViewController: UIViewController {
         
         tableView.frame = view.bounds
     }
-    
-    func addButtonPressed() {
+}
+
+// MARK: - Private
+
+private extension FetchedViewController {
+    @objc func addButtonPressed() {
         dataSource.addItem()
     }
 }

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import DataSource
+import EZDataSource
 
 class SectionedDataSourceTests: XCTestCase {
     var dataSource = TestSectionedDataSource()

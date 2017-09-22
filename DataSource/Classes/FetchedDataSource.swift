@@ -14,8 +14,7 @@ import CoreData
  `NSFetchRequestResult` conforming type contained within the data source.
  */
 
-public protocol FetchedDataSource: DataSource {
-    associatedtype ItemType: NSFetchRequestResult
+public protocol FetchedDataSource: DataSource where ItemType: NSFetchRequestResult {
     
     /**
      Backing `NSFetchedResultsController` for the data source
