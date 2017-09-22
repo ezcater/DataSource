@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double DataSourceVersionNumber;
-FOUNDATION_EXPORT const unsigned char DataSourceVersionString[];
+FOUNDATION_EXPORT double EZDataSourceVersionNumber;
+FOUNDATION_EXPORT const unsigned char EZDataSourceVersionString[];
 

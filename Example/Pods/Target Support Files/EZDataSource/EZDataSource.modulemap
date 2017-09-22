@@ -1,0 +1,6 @@
+framework module EZDataSource {
+  umbrella header "EZDataSource-umbrella.h"
+
+  export *
+  module * { export * }
+}

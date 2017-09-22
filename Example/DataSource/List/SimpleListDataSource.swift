@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import DataSource
+import EZDataSource
 
 class SimpleListDataSource: ListDataSource {
     typealias ItemType = String

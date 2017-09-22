@@ -15,7 +15,7 @@ class CoreDataController {
     let mainContext: NSManagedObjectContext
     
     private init(modelName: String) {
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(for: Swift.type(of: self))
         let managedObjectModel = NSManagedObjectModel(name: modelName, bundle: bundle)
         let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last
         let filename = "\(modelName).sqlite"

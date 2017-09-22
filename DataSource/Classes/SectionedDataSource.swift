@@ -14,7 +14,7 @@ import Foundation
  */
 
 public protocol SectionedDataSource: DataSource {
-    associatedtype SectionType: Section<ItemType>
+    associatedtype SectionType
     
     /**
      Backing array of `SectionType` elements which represent all of the sections.

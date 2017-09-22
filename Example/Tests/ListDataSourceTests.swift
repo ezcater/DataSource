@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import DataSource
+import EZDataSource
 
 class ListDataSourceTests: XCTestCase {
     var dataSource = TestListDataSource()

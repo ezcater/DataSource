@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import DataSource
+import EZDataSource
 
 class RootDataSource: ListDataSource {
     typealias ItemType = UIViewController

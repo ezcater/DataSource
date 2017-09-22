@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import DataSource
+import EZDataSource
 
 class SimpleSectionedDataSource: SectionedDataSource {
     typealias ItemType = String

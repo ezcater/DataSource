@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-import DataSource
+import EZDataSource
 
 class SimpleFetchedDataSource: NSObject, FetchedDataSource {
     typealias ItemType = Item
