@@ -1,6 +1,6 @@
 # DataSource
 
-[![Swift 3.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://swift.org)
+[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://swift.org)
 
 DataSource is a concise and UI independent protocol for representing data sources. It can be used out of the box, but is also extremely flexible in case any customization is required.
 
@@ -161,7 +161,7 @@ It includes default implementations for:
 
 ## Requirements
 
-DataSource requires Swift 3.0 and iOS 8.0+
+DataSource requires Swift 4.0 and iOS 8.3+
 
 ## Installation
 
@@ -174,7 +174,11 @@ pod "EZDataSource"
 
 ## Author
 
-Brad Smith, bsmith@ezcater.com
+Brad Smith
+
+## Maintainers
+
+ezCater Mobile Team, dev-mobile-team@ezcater.com
 
 ## License
 
