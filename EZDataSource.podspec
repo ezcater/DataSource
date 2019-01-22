@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EZDataSource'
-  s.version          = '0.2.1'
+  s.version          = '0.4.2'
   s.summary          = 'Concise, flexible, and UI independent protocol for data sources'
   s.description      = <<-DESC
   Concise, flexible, and UI independent protocol for data sources.
@@ -8,11 +8,10 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/ezcater/DataSource'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Brad Smith' => 'bradley.d.smith11@gmail.com' }
+  s.author           = { 'ezCater' => 'dev-mobile-team@ezcater.com' }
   s.source           = { :git => 'https://github.com/ezcater/DataSource.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/bsmithers11'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '8.3'
   s.source_files = 'DataSource/Classes/**/*'
 
 end

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder {
 // MARK: - UIApplicationDelegate
 
 extension AppDelegate: UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let _ = CoreDataController.sharedInstance
         
         let rootViewController = RootViewController(nibName: nil, bundle: nil)
