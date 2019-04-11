@@ -1,6 +1,6 @@
 # DataSource
 
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://swift.org)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org)
 
 DataSource is a concise and UI independent protocol for representing data sources. It can be used out of the box, but is also extremely flexible in case any customization is required.
 
@@ -12,7 +12,7 @@ public protocol DataSource {
 
     var reloadBlock: ReloadBlock? { get set }
     var numberOfSections: Int { get }
-    
+
     func numberOfItems(in section: Int) -> Int
     func item(at indexPath: IndexPath) -> ItemType?
     func indexPath(after indexPath: IndexPath) -> IndexPath?
@@ -49,7 +49,7 @@ public enum ChangeType {
 ## ListDataSource
 
 `ListDataSource` inherits from `DataSource` and represents a single section backed by an array.
-    
+
 ```swift
 public protocol ListDataSource: DataSource {
     var items: [ItemType] { get }
@@ -68,13 +68,13 @@ It includes default implementations for:
 ```swift
 class SimpleDataSource: ListDataSource {
     typealias ItemType = String
-    
+
     var items = [
         "Item 0",
         "Item 1",
         "Item 2"
     ]
-    
+
     var reloadBlock: ReloadBlock?
 }
 ```
@@ -86,9 +86,9 @@ class SimpleDataSource: ListDataSource {
 ```swift
 public protocol SectionedDataSource: DataSource {
     associatedtype SectionType: Section<ItemType>
-    
+
     var sections: [SectionType] { get }
-    
+
     func section(at index: Int) -> SectionType?
     func headerTitle(for section: Int) -> String?
     func footerTitle(for section: Int) -> String?
@@ -111,13 +111,13 @@ It includes default implementations for:
 class SimpleDataSource: SectionedDataSource {
     typealias ItemType = String
     typealias SectionType = Section<String>
-    
+
     var sections = [
         Section(items: ["Item 0.0", "Item 0.1", "Item 0.2"]),
         Section(items: ["Item 1.0", "Item 1.1"], headerTitle: "Header 1"),
         Section(items: ["Item 2.0"], headerTitle: "Header 2", footerTitle: "Footer 2")
     ]
-    
+
     var reloadBlock: ReloadBlock?
 }
 ```
@@ -131,7 +131,7 @@ open class Section<ItemType> {
     public var items: [ItemType]
     public var headerTitle: String?
     public var footerTitle: String?
-    
+
     public init(items: [ItemType], headerTitle: String? = nil, footerTitle: String? = nil) {
         self.items = items
         self.headerTitle = headerTitle
@@ -147,7 +147,7 @@ open class Section<ItemType> {
 ```swift
 public protocol FetchedDataSource: DataSource {
     associatedtype ItemType: NSFetchRequestResult
-    
+
     var fetchedResultsController: NSFetchedResultsController<ItemType> { get }
 }
 ```
@@ -161,7 +161,7 @@ It includes default implementations for:
 
 ## Requirements
 
-DataSource requires Swift 4.0 and iOS 8.3+
+DataSource requires Swift 4.2 and iOS 8.3+
 
 ## Installation
 
