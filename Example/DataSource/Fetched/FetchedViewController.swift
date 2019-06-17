@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class FetchedViewController: UIViewController {
-    fileprivate let dataSource = SimpleFetchedDataSource()
-    fileprivate let tableView = UITableView(frame: .zero, style: .plain)
-    fileprivate let reuseIdentifier = "Cell"
+    private let dataSource = SimpleFetchedDataSource()
+    private let tableView = UITableView(frame: .zero, style: .plain)
+    private let reuseIdentifier = "Cell"
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

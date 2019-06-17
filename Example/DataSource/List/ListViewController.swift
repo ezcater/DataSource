@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class ListViewController: UIViewController {
-    fileprivate let dataSource = SimpleListDataSource()
-    fileprivate let tableView = UITableView(frame: .zero, style: .plain)
-    fileprivate let reuseIdentifier = "Cell"
+    private let dataSource = SimpleListDataSource()
+    private let tableView = UITableView(frame: .zero, style: .plain)
+    private let reuseIdentifier = "Cell"
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

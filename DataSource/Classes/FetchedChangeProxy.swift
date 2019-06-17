@@ -12,9 +12,9 @@ import CoreData
 class FetchedChangeProxy: NSObject {
     static var associatedKey = "com.ezcater.dataSource.fetchedChangeProxyAssociatedKey"
     
-    fileprivate let reloadBlock: ReloadBlock?
+    private let reloadBlock: ReloadBlock?
     
-    fileprivate var changes = [Change]()
+    private var changes = [Change]()
     
     init(reloadBlock: ReloadBlock?) {
         self.reloadBlock = reloadBlock

@@ -1,6 +1,6 @@
 # DataSource
 
-[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org)
+[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org)
 
 DataSource is a concise and UI independent protocol for representing data sources. It can be used out of the box, but is also extremely flexible in case any customization is required.
 
@@ -161,7 +161,7 @@ It includes default implementations for:
 
 ## Requirements
 
-DataSource requires Swift 4.2 and iOS 8.3+
+DataSource requires Swift 5.0 and iOS 8.3+
 
 ## Installation
 

@@ -13,7 +13,7 @@ import EZDataSource
 class RootDataSource: ListDataSource {
     typealias ItemType = UIViewController
     
-    fileprivate(set) var items = [
+    private(set) var items = [
         ListViewController(nibName: nil, bundle: nil),
         SectionedViewController(nibName: nil, bundle: nil),
         FetchedViewController(nibName: nil, bundle: nil)
