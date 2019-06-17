@@ -13,7 +13,7 @@ import EZDataSource
 class SimpleFetchedDataSource: NSObject, FetchedDataSource {
     typealias ItemType = Item
     
-    fileprivate(set) var fetchedResultsController: NSFetchedResultsController<Item>
+    private(set) var fetchedResultsController: NSFetchedResultsController<Item>
     
     var reloadBlock: ReloadBlock?
     

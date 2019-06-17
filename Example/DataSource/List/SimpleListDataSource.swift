@@ -12,7 +12,7 @@ import EZDataSource
 class SimpleListDataSource: ListDataSource {
     typealias ItemType = String
     
-    fileprivate(set) var items = [
+    private(set) var items = [
         "Item 0",
         "Item 1",
         "Item 2"

@@ -10,7 +10,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
-    fileprivate let window = UIWindow(frame: UIScreen.main.bounds)
+    private let window = UIWindow(frame: UIScreen.main.bounds)
 }
 
 // MARK: - UIApplicationDelegate
