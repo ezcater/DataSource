@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EZDataSource'
-  s.version          = '0.5.0'
+  s.version          = '0.6.0'
   s.summary          = 'Concise, flexible, and UI independent protocol for data sources'
   s.description      = <<-DESC
   Concise, flexible, and UI independent protocol for data sources.
