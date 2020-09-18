@@ -57,7 +57,7 @@
 
 /* Begin PBXFileReference section */
 		00D251A15AC79A3B6D4C74B89C508858 /* FetchedDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FetchedDataSource.swift; path = DataSource/Classes/FetchedDataSource.swift; sourceTree = "<group>"; };
-		02F48A055EF98F33CABE2D2BE892F5EC /* Pods_DataSource_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DataSource_Example.framework; path = "Pods-DataSource_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		02F48A055EF98F33CABE2D2BE892F5EC /* Pods_DataSource_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataSource_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		056450AD9423134D5B7BF337EC18141C /* Pods-DataSource_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DataSource_Example-Info.plist"; sourceTree = "<group>"; };
 		0743AC739049765599F2A63DB9F508FA /* Pods-DataSource_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DataSource_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		09373C35E571B5A8826A1524D338DFF2 /* Pods-DataSource_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DataSource_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -72,9 +72,9 @@
 		4931FEBBC77AAA8E01FDCF6EAF66F370 /* AnySectionedDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnySectionedDataSource.swift; path = DataSource/Classes/AnySectionedDataSource.swift; sourceTree = "<group>"; };
 		4B32273126303CAEE41B0188D92056DE /* UITableView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+Extensions.swift"; path = "DataSource/Classes/UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		58D19A6D08A33F255A2D2274550F3689 /* Pods-DataSource_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DataSource_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		63A6FDD819F61B9F8CD3B047848983BE /* EZDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EZDataSource.framework; path = EZDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A6FDD819F61B9F8CD3B047848983BE /* EZDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CD57DB44E1EB6D7F701DE8C09BE8EF /* Pods-DataSource_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DataSource_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6A329E2951CA8D9B6A69D626EA745151 /* Pods_DataSource_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DataSource_Tests.framework; path = "Pods-DataSource_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A329E2951CA8D9B6A69D626EA745151 /* Pods_DataSource_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataSource_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA051A77DC3967192FB4229C2944A81 /* Pods-DataSource_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DataSource_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		6E884965C4D4F30712B1FA3B505AA31A /* Pods-DataSource_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DataSource_Tests.modulemap"; sourceTree = "<group>"; };
 		74A097B560DC4779370160AF0DF317C5 /* Pods-DataSource_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DataSource_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -84,18 +84,18 @@
 		80DF983689510C5571067DAC64E99433 /* SectionedDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SectionedDataSource.swift; path = DataSource/Classes/SectionedDataSource.swift; sourceTree = "<group>"; };
 		852169F7D978AB9186265B06F1A5F338 /* EZDataSource.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EZDataSource.debug.xcconfig; sourceTree = "<group>"; };
 		88734D497BB7B4DF1C75BB8D84565F8C /* EZDataSource-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EZDataSource-dummy.m"; sourceTree = "<group>"; };
-		8B019D65EFDAC5CA3045F10AFB98D148 /* EZDataSource.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = EZDataSource.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8B019D65EFDAC5CA3045F10AFB98D148 /* EZDataSource.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = EZDataSource.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8FF24F8F607B363A7FD05C7A95759135 /* Pods-DataSource_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DataSource_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		93F97C09941C70347C743F2188B0CB7F /* EZDataSource-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZDataSource-umbrella.h"; sourceTree = "<group>"; };
 		941A4DBC6C47AAC98DC5F22E0102B280 /* Section.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Section.swift; path = DataSource/Classes/Section.swift; sourceTree = "<group>"; };
 		96B3A6A98D124A989C7153FC89F2C728 /* Pods-DataSource_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DataSource_Example.modulemap"; sourceTree = "<group>"; };
-		97E1FD2E7BA98FC337826F935824A27A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		97E1FD2E7BA98FC337826F935824A27A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9A4DA86152B618640E08ECB3F208FADA /* Pods-DataSource_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DataSource_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9D06219D69CBA3562C134F79C0DC2BF6 /* Pods-DataSource_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DataSource_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A9E1420F44CE12150B68A80730DF6C1D /* ListDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ListDataSource.swift; path = DataSource/Classes/ListDataSource.swift; sourceTree = "<group>"; };
 		ABD5B7F0CED39356EEDBCC2096D42CAE /* Pods-DataSource_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DataSource_Tests-dummy.m"; sourceTree = "<group>"; };
-		B892FB063FCB5325535EF0D2E3973A82 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B892FB063FCB5325535EF0D2E3973A82 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CA8546BC8BB3EE60FB02F53C1333E5AC /* AnyListDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyListDataSource.swift; path = DataSource/Classes/AnyListDataSource.swift; sourceTree = "<group>"; };
 		CD4BD12615EB9CB54388A82E7F96AAC7 /* Pods-DataSource_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DataSource_Example-dummy.m"; sourceTree = "<group>"; };
 		CF73C168509106B1470205C49DE49E97 /* EZDataSource-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EZDataSource-Info.plist"; sourceTree = "<group>"; };
@@ -486,7 +486,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DataSource_Example/Pods-DataSource_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DataSource_Example/Pods-DataSource_Example.modulemap";
@@ -583,13 +582,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -679,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -708,7 +706,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DataSource_Tests/Pods-DataSource_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DataSource_Tests/Pods-DataSource_Tests.modulemap";
@@ -741,7 +738,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DataSource_Example/Pods-DataSource_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DataSource_Example/Pods-DataSource_Example.modulemap";
@@ -775,7 +771,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DataSource_Tests/Pods-DataSource_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DataSource_Tests/Pods-DataSource_Tests.modulemap";
