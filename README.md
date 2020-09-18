@@ -161,7 +161,7 @@ It includes default implementations for:
 
 ## Requirements
 
-DataSource requires Swift 5.0 and iOS 8.3+
+DataSource requires Swift 5.0 and iOS 12.0+
 
 ## Installation
 

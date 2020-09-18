@@ -57,6 +57,9 @@ public enum ChangeType {
             }
             
             self = .update(indexPath)
+
+        @unknown default:
+            return nil
         }
     }
 }
