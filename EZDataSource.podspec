@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author           = { 'ezCater' => 'dev-mobile-team@ezcater.com' }
   s.source           = { :git => 'https://github.com/ezcater/DataSource.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.3'
+  s.ios.deployment_target = '12.0'
   s.swift_version = '5.0'
   s.source_files = 'DataSource/Classes/**/*'
 

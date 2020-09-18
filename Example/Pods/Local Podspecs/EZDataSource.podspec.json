@@ -16,8 +16,9 @@
     "tag": "0.5.0"
   },
   "platforms": {
-    "ios": "8.3"
+    "ios": "12.0"
   },
-  "swift_version": "5.0",
-  "source_files": "DataSource/Classes/**/*"
+  "swift_versions": "5.0",
+  "source_files": "DataSource/Classes/**/*",
+  "swift_version": "5.0"
 }
