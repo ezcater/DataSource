@@ -20,7 +20,7 @@ public typealias ReloadBlock = (ChangeSet) -> Void
  `ItemType` represents the type of items contained within the data source.
  */
 
-public protocol DataSource: class {
+public protocol DataSource: AnyObject {
     associatedtype ItemType
     
     /**
