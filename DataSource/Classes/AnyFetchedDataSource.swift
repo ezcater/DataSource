@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 private class AnyFetchedDataSourceBase<ItemType: NSFetchRequestResult>: FetchedDataSource {
     init() {

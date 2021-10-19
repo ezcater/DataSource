@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 /**
  `FetchedDataSource` is a protocol for representing a `NSFetchedResultsController` based data source. `ItemType` represents an

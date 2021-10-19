@@ -6,9 +6,9 @@
 //  Copyright © 2017 ezCater. All rights reserved.
 //
 
+import EZDataSource
 import Foundation
 import UIKit
-import EZDataSource
 
 class RootDataSource: ListDataSource {
     typealias ItemType = UIViewController

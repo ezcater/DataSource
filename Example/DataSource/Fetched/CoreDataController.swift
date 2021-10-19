@@ -6,8 +6,8 @@
 //  Copyright © 2017 ezCater. All rights reserved.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 class CoreDataController {
     static let sharedInstance = CoreDataController(modelName: "FetchedDataSource")

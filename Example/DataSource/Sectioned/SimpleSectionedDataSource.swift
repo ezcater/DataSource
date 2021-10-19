@@ -6,8 +6,8 @@
 //  Copyright © 2017 ezCater. All rights reserved.
 //
 
-import Foundation
 import EZDataSource
+import Foundation
 
 class SimpleSectionedDataSource: SectionedDataSource {
     typealias ItemType = String
