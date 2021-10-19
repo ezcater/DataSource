@@ -6,8 +6,8 @@
 //
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 public typealias ChangeSetCompletion = (Bool) -> Void
 

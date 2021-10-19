@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 class FetchedChangeProxy: NSObject {
     static var associatedKey = "com.ezcater.dataSource.fetchedChangeProxyAssociatedKey"

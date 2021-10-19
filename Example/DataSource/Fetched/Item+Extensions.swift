@@ -6,8 +6,8 @@
 //  Copyright © 2017 ezCater. All rights reserved.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 extension Item {
     static var entityName: String {

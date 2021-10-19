@@ -6,9 +6,9 @@
 //  Copyright © 2017 ezCater. All rights reserved.
 //
 
-import Foundation
 import CoreData
 import EZDataSource
+import Foundation
 
 class SimpleFetchedDataSource: NSObject, FetchedDataSource {
     typealias ItemType = Item
