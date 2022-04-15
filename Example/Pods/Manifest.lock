@@ -1,5 +1,5 @@
 PODS:
-  - EZDataSource (0.5.0)
+  - EZDataSource (0.7.1)
 
 DEPENDENCIES:
   - EZDataSource (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EZDataSource: 6a888d9cdbb0de17ebf3b1ccf0efa400fafca1cc
+  EZDataSource: 40247854869b298b2ee67128c1f9143ac665de58
 
-PODFILE CHECKSUM: 85913debad3a298c7c990c53d0e2a65ff802ee5a
+PODFILE CHECKSUM: 1f642398f23585eea93167c4d767af6e4f2124aa
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.3
