@@ -1,0 +1,7 @@
+* @ezcater/ios-apps
+
+# any specific CODEOWNER lines you've already got appear here. This is because
+# order is important int CODEOWNERS files, the last match wins.
+
+# These two lines MUST be last in your CODEOWNERS file.
+.github/CODEOWNERS @ezcater/admins
