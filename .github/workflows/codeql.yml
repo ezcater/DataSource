@@ -16,7 +16,7 @@ on:
 jobs:
   scan:
     name: Scan
-    runs-on: [ ubuntu-latest ]
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     permissions:
       actions: read
       contents: read
@@ -31,7 +31,7 @@ jobs:
       matrix:
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby', 'swift' ]
         # https://aka.ms/codeql-docs/language-support
-        language: [ 'ruby', 'swift' ]
+        language: [ 'swift' ]
         
 
     steps:
