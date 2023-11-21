@@ -13,23 +13,23 @@ extension Item {
     static var entityName: String {
         return String(describing: self)
     }
-    
+
     static var fetchedItems: NSFetchedResultsController<Item> {
         let fetchRequest = NSFetchRequest<Item>(entityName: entityName)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Item.title), ascending: true)]
         let context = CoreDataController.sharedInstance.mainContext
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
+
         try? fetchedResultsController.performFetch()
-        
+
         return fetchedResultsController
     }
-    
+
     static func addItem(withTitle title: String) {
         let context = CoreDataController.sharedInstance.mainContext
         context.performAndWait {
             createItem(withTitle: title, context: context)
-            
+
             do {
                 try context.save()
             }
@@ -38,12 +38,12 @@ extension Item {
             }
         }
     }
-    
+
     static func delete(item: Item) {
         let context = CoreDataController.sharedInstance.mainContext
         context.performAndWait {
             context.delete(item)
-            
+
             do {
                 try context.save()
             }

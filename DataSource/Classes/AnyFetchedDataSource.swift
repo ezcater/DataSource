@@ -15,40 +15,40 @@ private class AnyFetchedDataSourceBase<ItemType: NSFetchRequestResult>: FetchedD
             fatalError("AnyFetchedDataSourceBase is an abstract class")
         }
     }
-    
+
     // DataSource
-    
+
     var numberOfSections: Int {
         fatalError("Must override")
     }
-    
+
     var reloadBlock: ReloadBlock? {
         get { fatalError("Must override") }
         set { fatalError("Must override") }
     }
-    
+
     func numberOfItems(in section: Int) -> Int {
         fatalError("Must override")
     }
-    
+
     func item(at indexPath: IndexPath) -> ItemType? {
         fatalError("Must override")
     }
-    
+
     func indexPath(after indexPath: IndexPath) -> IndexPath? {
         fatalError("Must override")
     }
-    
+
     // FetchedDataSource
-    
+
     var fetchedResultsController: NSFetchedResultsController<ItemType> {
         fatalError("Must override")
     }
-    
+
     func registerForFetchedChanges() {
         fatalError("Must override")
     }
-    
+
     func unregisterForFetchedChanges() {
         fatalError("Must override")
     }
@@ -56,17 +56,17 @@ private class AnyFetchedDataSourceBase<ItemType: NSFetchRequestResult>: FetchedD
 
 private final class AnyFetchedDataSourceBox<Concrete: FetchedDataSource>: AnyFetchedDataSourceBase<Concrete.ItemType> {
     var concrete: Concrete
-    
+
     init(concrete: Concrete) {
         self.concrete = concrete
     }
-    
+
     // DataSource
-    
+
     override var numberOfSections: Int {
         return concrete.numberOfSections
     }
-    
+
     override var reloadBlock: ReloadBlock? {
         get {
             return concrete.reloadBlock
@@ -75,29 +75,29 @@ private final class AnyFetchedDataSourceBox<Concrete: FetchedDataSource>: AnyFet
             concrete.reloadBlock = newValue
         }
     }
-    
+
     override func numberOfItems(in section: Int) -> Int {
         return concrete.numberOfItems(in: section)
     }
-    
+
     override func item(at indexPath: IndexPath) -> ItemType? {
         return concrete.item(at: indexPath)
     }
-    
+
     override func indexPath(after indexPath: IndexPath) -> IndexPath? {
         return concrete.indexPath(after: indexPath)
     }
-    
+
     // FetchedDataSource
-    
+
     override var fetchedResultsController: NSFetchedResultsController<ItemType> {
         return concrete.fetchedResultsController
     }
-    
+
     override func registerForFetchedChanges() {
         concrete.registerForFetchedChanges()
     }
-    
+
     override func unregisterForFetchedChanges() {
         concrete.unregisterForFetchedChanges()
     }
@@ -105,17 +105,17 @@ private final class AnyFetchedDataSourceBox<Concrete: FetchedDataSource>: AnyFet
 
 public final class AnyFetchedDataSource<ItemType: NSFetchRequestResult>: FetchedDataSource {
     private let box: AnyFetchedDataSourceBase<ItemType>
-    
+
     public init<Concrete: FetchedDataSource>(dataSource: Concrete) where Concrete.ItemType == ItemType {
         box = AnyFetchedDataSourceBox(concrete: dataSource)
     }
-    
+
     // DataSource
-    
+
     public var numberOfSections: Int {
         return box.numberOfSections
     }
-    
+
     public var reloadBlock: ReloadBlock? {
         get {
             return box.reloadBlock
@@ -124,29 +124,29 @@ public final class AnyFetchedDataSource<ItemType: NSFetchRequestResult>: Fetched
             box.reloadBlock = newValue
         }
     }
-    
+
     public func numberOfItems(in section: Int) -> Int {
         return box.numberOfItems(in: section)
     }
-    
+
     public func item(at indexPath: IndexPath) -> ItemType? {
         return box.item(at: indexPath)
     }
-    
+
     public func indexPath(after indexPath: IndexPath) -> IndexPath? {
         return box.indexPath(after: indexPath)
     }
-    
+
     // FetchedDataSource
-    
+
     public var fetchedResultsController: NSFetchedResultsController<ItemType> {
         return box.fetchedResultsController
     }
-    
+
     public func registerForFetchedChanges() {
         box.registerForFetchedChanges()
     }
-    
+
     public func unregisterForFetchedChanges() {
         box.unregisterForFetchedChanges()
     }

@@ -30,7 +30,7 @@ public extension UICollectionView {
                             let indexSet = IndexSet(integer: indexPath.section)
                             self.reloadSections(indexSet)
                         }
-                        
+
                     case .item(let type):
                         switch type {
                         case .insert(let indexPath):
@@ -45,7 +45,7 @@ public extension UICollectionView {
                     }
                 }
             }
-            
+
             performBatchUpdates(updates, completion: completion)
         case .all:
             reloadData()

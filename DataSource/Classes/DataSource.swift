@@ -22,19 +22,19 @@ public typealias ReloadBlock = (ChangeSet) -> Void
 
 public protocol DataSource: AnyObject {
     associatedtype ItemType
-    
+
     /**
      Callback to signify that the backing data has changed.
      */
-    
+
     var reloadBlock: ReloadBlock? { get set }
-    
+
     /**
      Returns the number of sections in the backing data.
      */
-    
+
     var numberOfSections: Int { get }
-    
+
     /**
      Returns the number of items in a specificed section.
      
@@ -42,9 +42,9 @@ public protocol DataSource: AnyObject {
      
      - Returns: The number of items in the specified `section`, or `0` if the data source does not contain the `section`
      */
-    
+
     func numberOfItems(in section: Int) -> Int
-    
+
     /**
      Returns the item at the specified `IndexPath`.
      
@@ -52,9 +52,9 @@ public protocol DataSource: AnyObject {
      
      - Returns: The item at the specified `indexPath`, or `nil` if the data source does not contain `indexPath`
      */
-    
+
     func item(at indexPath: IndexPath) -> ItemType?
-    
+
     /**
      Function to retrieve the next present index path, determined by
      section and item.
@@ -64,6 +64,6 @@ public protocol DataSource: AnyObject {
      - Returns: The index path after the specified `indexPath`, or `nil` if `indexPath`
      is the last one
      */
-    
+
     func indexPath(after indexPath: IndexPath) -> IndexPath?
 }

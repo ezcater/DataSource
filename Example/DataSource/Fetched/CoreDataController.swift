@@ -11,9 +11,9 @@ import Foundation
 
 class CoreDataController {
     static let sharedInstance = CoreDataController(modelName: "FetchedDataSource")
-    
+
     let mainContext: NSManagedObjectContext
-    
+
     private init(modelName: String) {
         let bundle = Bundle(for: Swift.type(of: self))
         let managedObjectModel = NSManagedObjectModel(name: modelName, bundle: bundle)
@@ -21,13 +21,13 @@ class CoreDataController {
         let filename = "\(modelName).sqlite"
         let storeUrl = directory?.appendingPathComponent(filename)
         let type = NSInMemoryStoreType
-        
+
         guard let model = managedObjectModel, let url = storeUrl else {
             preconditionFailure()
         }
-        
+
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(model: model, type: type, url: url)
-        
+
         mainContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         mainContext.persistentStoreCoordinator = persistentStoreCoordinator
     }
@@ -40,7 +40,7 @@ extension NSManagedObjectModel {
         guard let url = bundle.url(forResource: name, withExtension: "momd") ?? bundle.url(forResource: name, withExtension: "mom") else {
             return nil
         }
-        
+
         self.init(contentsOf: url)
     }
 }
@@ -50,7 +50,7 @@ extension NSManagedObjectModel {
 extension NSPersistentStoreCoordinator {
     convenience init(model: NSManagedObjectModel, type: String, url: URL) {
         self.init(managedObjectModel: model)
-        
+
         do {
             try addPersistentStore(ofType: type, configurationName: nil, at: url, options: nil)
         }

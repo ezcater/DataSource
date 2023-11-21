@@ -17,9 +17,9 @@ public extension UITableView {
             CATransaction.setCompletionBlock {
                 completion?(true)
             }
-            
+
             beginUpdates()
-            
+
             changes.forEach { change in
                 switch change {
                 case .section(let type):
@@ -36,7 +36,7 @@ public extension UITableView {
                         let indexSet = IndexSet(integer: indexPath.section)
                         reloadSections(indexSet, with: .none)
                     }
-                    
+
                 case .item(let type):
                     switch type {
                     case .insert(let indexPath):
@@ -50,9 +50,9 @@ public extension UITableView {
                     }
                 }
             }
-            
+
             endUpdates()
-            
+
             CATransaction.commit()
         case .all:
             reloadData()
