@@ -14,7 +14,6 @@ import Foundation
  */
 
 open class Section<ItemType> {
-
     /**
      An array of items of type `ItemType`.
      */

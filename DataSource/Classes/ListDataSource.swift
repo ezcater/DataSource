@@ -14,7 +14,6 @@ import Foundation
  */
 
 public protocol ListDataSource: DataSource {
-
     /**
      Backing array of `ItemType` elements which represents a single section.
      */

@@ -15,7 +15,6 @@ import Foundation
  */
 
 public protocol FetchedDataSource: DataSource where ItemType: NSFetchRequestResult {
-
     /**
      Backing `NSFetchedResultsController` for the data source
      */
