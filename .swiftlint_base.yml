@@ -1,0 +1,68 @@
+# Organization-level SwiftLint configuration.
+# Project-specific changes should be made in the local `.swiftlint.yml` file; changes to
+# this file should be rare and should be reflected in the swift-style-guide repository (as
+# well as all of the other Swift repos).
+
+disabled_rules: 
+  - class_delegate_protocol # Too many false positives when using protocol inheritance
+  - cyclomatic_complexity
+  - line_length
+  - no_fallthrough_only
+  
+opt_in_rules:
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - extension_access_modifier
+  - first_where
+  - force_unwrapping
+  - identical_operands
+  - last_where
+  - legacy_multiple
+  - literal_expression_end_indentation
+  - local_doc_comment
+  - multiline_function_chains
+  - operator_usage_whitespace
+  - sorted_imports
+  - toggle_bool
+  - untyped_error_in_catch
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace_closing_braces
+  - vertical_whitespace_opening_braces
+  - weak_delegate
+  
+excluded: 
+# These should be configured in your project-specific .swiftlint.yml file.
+
+# Customize individual rule configurations.
+# See the [Rule Directory](https://realm.github.io/SwiftLint/rule-directory.html) for
+# the specific configuration options available for each rule.
+statement_position:
+  statement_mode: uncuddled_else
+type_name:
+  min_length: 3
+  max_length:
+    warning: 50
+    error: 60
+file_length:
+    warning: 1000
+    error: 1500
+function_body_length:
+    warning: 120
+    error: 160
+type_body_length:
+    warning: 450
+    error: 800
+identifier_name:
+  min_length: # only min_length
+    error: 3 # only error
+force_unwrapping:
+    severity: error
+vertical_whitespace:
+  severity: error
