@@ -19,10 +19,12 @@ private class AnyDataSourceBase<ItemType>: DataSource {
         fatalError("Must override")
     }
 
+    // swiftlint: disable unused_setter_value
     var reloadBlock: ReloadBlock? {
         get { fatalError("Must override") }
         set { fatalError("Must override") }
     }
+    // swiftlint: enable unused_setter_value
 
     func numberOfItems(in section: Int) -> Int {
         fatalError("Must override")
