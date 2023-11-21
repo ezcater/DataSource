@@ -103,11 +103,12 @@ public extension FetchedDataSource {
 
 private extension FetchedDataSource {
     var fetchedChangeProxy: FetchedChangeProxy {
-        guard let proxy = objc_getAssociatedObject(self, &FetchedChangeProxy.associatedKey) as? FetchedChangeProxy else {
+        let keyPointer = UnsafePointer<String>(&FetchedChangeProxy.associatedKey)
+        guard let proxy = objc_getAssociatedObject(self, keyPointer) as? FetchedChangeProxy else {
             let proxy = FetchedChangeProxy(reloadBlock: { [weak self] changeSet in
                 self?.reloadBlock?(changeSet)
             })
-            objc_setAssociatedObject(self, &FetchedChangeProxy.associatedKey, proxy, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, keyPointer, proxy, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             return proxy
         }
 
