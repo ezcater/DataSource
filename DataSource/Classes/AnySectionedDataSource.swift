@@ -167,4 +167,3 @@ public final class AnySectionedDataSource<ItemType, SectionType: Section<ItemTyp
         return box.footerTitle(for: section)
     }
 }
-
