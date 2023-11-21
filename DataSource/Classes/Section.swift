@@ -14,25 +14,24 @@ import Foundation
  */
 
 open class Section<ItemType> {
-    
     /**
      An array of items of type `ItemType`.
      */
-    
+
     public var items: [ItemType]
-    
+
     /**
      A `String` designed to be used with `UITableView` or `UICollectionView` section header views.
      */
-    
+
     public var headerTitle: String?
-    
+
     /**
      A `String` designed to be used with `UITableView` or `UICollectionView` section footer views.
      */
-    
+
     public var footerTitle: String?
-    
+
     /**
      Initializes and return a `Section` object with the given items and optionally a header title or footer title.
      
@@ -40,7 +39,7 @@ open class Section<ItemType> {
      - Parameter headerTitle: Optional `String` to be used as a header
      - Parameter footerTitle: Optional `String` to be used as a footer
      */
-    
+
     public init(items: [ItemType], headerTitle: String? = nil, footerTitle: String? = nil) {
         self.items = items
         self.headerTitle = headerTitle

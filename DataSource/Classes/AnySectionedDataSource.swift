@@ -24,10 +24,12 @@ private class AnySectionedDataSourceBase<GenericItemType, GenericSectionType: Se
         fatalError("Must override")
     }
 
+    // swiftlint: disable unused_setter_value
     var reloadBlock: ReloadBlock? {
         get { fatalError("Must override") }
         set { fatalError("Must override") }
     }
+    // swiftlint: enable unused_setter_value
 
     func numberOfItems(in section: Int) -> Int {
         fatalError("Must override")
@@ -165,4 +167,3 @@ public final class AnySectionedDataSource<ItemType, SectionType: Section<ItemTyp
         return box.footerTitle(for: section)
     }
 }
-

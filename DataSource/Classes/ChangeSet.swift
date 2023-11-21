@@ -30,32 +30,32 @@ public enum ChangeType {
     case delete(IndexPath)
     case move(IndexPath, IndexPath)
     case update(IndexPath)
-    
+
     public init?(type: NSFetchedResultsChangeType, indexPath: IndexPath?, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
             guard let newIndexPath = newIndexPath else {
                 return nil
             }
-            
+
             self = .insert(newIndexPath)
         case .delete:
             guard let indexPath = indexPath else {
                 return nil
             }
-            
+
             self = .delete(indexPath)
         case .move:
             guard let indexPath = indexPath, let newIndexPath = newIndexPath else {
                 return nil
             }
-            
+
             self = .move(indexPath, newIndexPath)
         case .update:
             guard let indexPath = indexPath else {
                 return nil
             }
-            
+
             self = .update(indexPath)
 
         @unknown default:

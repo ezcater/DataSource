@@ -1,0 +1,7 @@
+# Project-level SwiftLint configuration.
+
+# Include the base configuration
+parent_config: .swiftlint_base.yml
+
+# Paths to ignore during linting (e.g. generated code). Takes precedence over `included`. 
+excluded:
