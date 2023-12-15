@@ -12,7 +12,7 @@ let package = Package(
             targets: ["EZDataSource"]),
     ],
     dependencies: [
-        .package(url: "git@github.com:realm/SwiftLint", exact: "0.53.0"),
+        .package(url: "git@github.com:realm/SwiftLint", .upToNextMinor(from: "0.54.0")),
     ],
     targets: [
         .target(
