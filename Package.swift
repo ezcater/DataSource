@@ -4,7 +4,8 @@ import PackageDescription
 let package = Package(
     name: "EZDataSource",
     platforms: [
-        .iOS("14.0"),
+        .iOS("15.0"),
+        .macOS("12.0"),
     ],
     products: [
         .library(
