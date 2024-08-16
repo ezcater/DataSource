@@ -13,7 +13,7 @@ let package = Package(
             targets: ["EZDataSource"]),
     ],
     dependencies: [
-        .package(url: "git@github.com:realm/SwiftLint", .upToNextMinor(from: "0.54.0")),
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.56.1"),
     ],
     targets: [
         .target(
@@ -21,7 +21,7 @@ let package = Package(
             dependencies: [],
             path: "DataSource/Classes",
             plugins: [
-                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")
             ]
         ),
     ]
